@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :appointments
+  has_many :student_appointments, class_name: 'Appointment', foreign_key: 'student_id'
+  has_many :tutor_appointments, class_name: 'Appointment', foreign_key: 'tutor_id'
 
   authenticates_with_sorcery!
 
