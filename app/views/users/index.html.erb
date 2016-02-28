@@ -1,6 +1,6 @@
   <h1 class='user-header'>All Users</h1>
   <h2 class='user-header'>There are total of <%= pluralize(User.all.length,'registered member') %></h2>
-
+  <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
   <table>
     <thead>
       <tr>
