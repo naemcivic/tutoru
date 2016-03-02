@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  availability: 2016-03-01
+  picture: MyString
+  qualification: MyText
+  category: MyString
+  location: MyText
+  user_id: 
+
+two:
+  availability: 2016-03-01
+  picture: MyString
+  qualification: MyText
+  category: MyString
+  location: MyText
+  user_id: 

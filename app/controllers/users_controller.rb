@@ -13,17 +13,23 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    
+    @user.build_profile
   end
 
   def create
     @user = User.new(user_params)
       if @user.save
         redirect_to(:users, notice: 'Member was successfully created')
+      elsif
+        @user.student?
+        redirect_to new_user_url(tutor:true)
       else
         render :new
       end
   end
+
+
+
 
   def edit
     @user = User.find(params[:id])
@@ -47,7 +53,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :student)
+
+
+    params.require(:user)
+      .permit(:name, :email, :password, :password_confirmation, :student,
+            profile_attributes:[:category, :qualification, :location, :picture, :availability])
+
   end
 
 end

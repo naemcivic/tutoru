@@ -34,6 +34,41 @@
   <div class="field">
      <%= f.hidden_field :student, :value => false %>
   </div>
+
+  <h2>Profile</h2>
+  <div id="profile">
+    <%= f.fields_for :profile do |profile_fields| %>
+
+  <div class="field">
+    <%= profile_fields.label :category %>
+    <%= profile_fields.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= profile_fields.label :qualification %>
+    <%= profile_fields.text_area :qualification %>
+  </div>
+
+  <div class="field">
+    <%= profile_fields.label :location %>
+    <%= profile_fields.text_area :location %>
+  </div>
+
+  <div class="field">
+    <%= profile_fields.label :availability %>
+    <%= profile_fields.date_field :availability %>
+  </div>
+
+  <div class="field">
+    <%= profile_fields.label :picture %>
+    <%= profile_fields.text_field :picture %>
+  </div>
+
+
+
+  </div>
+  <% end %>
+
   <div class="action">
      <%= f.submit %><br />
   </div>

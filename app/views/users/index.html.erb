@@ -1,21 +1,25 @@
-  <h1 class='user-header'>All Users</h1>
-  <h2 class='user-header'>There are total of <%= pluralize(User.all.length,'registered member') %></h2>
   <table>
     <thead>
       <tr>
         <th>Name</th>
-        <th>email</th>
-        <th colspan='3'></th>
+        <th>Category</th>
+        <th>availability</th>
+        <th>Email</th>
+        <th colspan='10'></th>
       </tr>
     </thead>
       <tbody>
         <% @users.each do |user| %>
           <tr>
+            <% if user.student? %>
             <td><%= user.name %></td>
+            <td><%= user.profile.category %></td>
+            <td><%= user.profile.availability %></td>
             <td><%= user.email %></td>
             <td><%= link_to 'Show', user %></td>
             <td><%= link_to 'Edit', edit_user_path(user) %></td>
           </tr>
+        <% end %>
         <% end %>
       </tbody>
   </table>

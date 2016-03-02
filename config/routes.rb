@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :user_sessions
   resources :users do
     resources :appointments
+    resources :profiles
   end
 
   get 'login' => 'user_sessions#new', :as => :login

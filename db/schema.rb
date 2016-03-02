@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229195605) do
+ActiveRecord::Schema.define(version: 20160301191223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20160229195605) do
   add_index "appointments", ["student_id"], name: "index_appointments_on_student_id", using: :btree
   add_index "appointments", ["tutor_id"], name: "index_appointments_on_tutor_id", using: :btree
 
+  create_table "profiles", force: :cascade do |t|
+    t.date     "availability"
+    t.string   "picture"
+    t.text     "qualification"
+    t.string   "category"
+    t.text     "location"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email",            null: false
@@ -41,4 +54,5 @@ ActiveRecord::Schema.define(version: 20160229195605) do
 
   add_foreign_key "appointments", "users", column: "student_id"
   add_foreign_key "appointments", "users", column: "tutor_id"
+  add_foreign_key "profiles", "users"
 end
