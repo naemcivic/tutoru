@@ -3,7 +3,15 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: [:index, :new, :create]
 
   def index
-    @users = User.all
+    @users = Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%")
+
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
+
+
   end
 
 

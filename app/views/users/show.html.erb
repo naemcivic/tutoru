@@ -1,12 +1,12 @@
 <h1>User Info</h1>
 <ul>
-  <li><%= @user.name %></li>
-  <li><%= @user.email %></li>
+  <li>Tutor's name: <%= @user.name %></li>
+  <li>Tutor's email: <%= @user.email %></li>
   <li>a valuable member since <%= @user.created_at.strftime('%^b %d %Y') %></li>
   <% if @user.student? %>
   <h3><%= "#{@user.name} is a tutor on this site" %></h3>
-  <li>Area of expertise <%= @user.profile.category %></li>
-  <li>availability <%= @user.profile.availability %></li>
+  <li>Area of expertise: <%= @user.profile.category %></li>
+  <li>Availability: <%= @user.profile.availability %></li>
   <% end %>
 </ul>
 <%= link_to 'Home', users_path %>

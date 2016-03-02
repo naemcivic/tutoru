@@ -12,8 +12,13 @@
 
   <div id="nav">
     <% if current_user %>
-      <%= link_to "Logout", :logout, method: :post %></ br>
-      <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
+      <% unless current_page?(root_path) %>
+        <%= link_to "Logout", :logout, method: :post %></ br>
+        <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
+      <% else %>
+        <%= link_to 'Home', users_path %>
+        <%= link_to "Logout", :logout, method: :post %></ br>
+      <% end %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>

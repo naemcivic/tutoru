@@ -1,25 +1,12 @@
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>availability</th>
-        <th>Email</th>
-        <th colspan='10'></th>
-      </tr>
-    </thead>
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <% if user.student? %>
-            <td><%= user.name %></td>
-            <td><%= user.profile.category %></td>
-            <td><%= user.profile.availability %></td>
-            <td><%= user.email %></td>
-            <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          </tr>
-        <% end %>
-        <% end %>
-      </tbody>
-  </table>
+
+
+  <h2>Search by Category</h2>
+    <%= form_tag users_path, method: :get, authentication: false, id: 'search-form' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search" %>
+    <% end %>
+
+  <h2>Tutors Available</h2>
+  <div id="tutorlist">
+    <%= render 'user' %>
+  </div>
