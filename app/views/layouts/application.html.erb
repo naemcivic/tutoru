@@ -20,8 +20,8 @@
         <%= link_to "Logout", :logout, method: :post %></ br>
       <% end %>
     <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
+      <%= link_to "Become a Student", new_user_path %> |
+      <%= link_to "Login", :login %> |
       <%= link_to "Become a Tutor", new_user_path(tutor: true) %>
     <% end %>
   </div>
