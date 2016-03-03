@@ -9,13 +9,11 @@ class UsersController < ApplicationController
       Profile.all
     end
 
-
-
       respond_to do |format|
         format.html
         format.js
       end
-    end
+  end
 
 
   def show

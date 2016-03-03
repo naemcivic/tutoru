@@ -24,10 +24,4 @@ class User < ActiveRecord::Base
       end
   end
 
-
-    def available?
-      
-    end
-
-
 end

@@ -4,9 +4,4 @@ class Appointment < ActiveRecord::Base
 
   validates :appointment_date, presence: true
 
-  def available?
-    
-  end
-
-
 end

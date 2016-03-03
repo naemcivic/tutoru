@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-
+    
     @appointment = @user.student_appointments.build(appointment_params)
 
     respond_to do |format|
