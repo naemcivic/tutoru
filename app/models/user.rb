@@ -25,6 +25,9 @@ class User < ActiveRecord::Base
   end
 
 
+    def available?
+      
+    end
 
 
 end

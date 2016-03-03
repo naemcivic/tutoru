@@ -16,7 +16,7 @@
         <%= link_to "Logout", :logout, method: :post %></ br>
         <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
       <% else %>
-        <%= link_to 'Home', users_path %>
+      
         <%= link_to "Logout", :logout, method: :post %></ br>
       <% end %>
     <% else %>

@@ -1,10 +1,10 @@
-  <h1>User Info</h1>
+  <h1>Tutor's Info</h1>
   <ul>
     <li>Tutor's name: <%= @user.name %></li>
     <li>Tutor's email: <%= @user.email %></li>
     <li>a valuable member since <%= @user.created_at.strftime('%^b %d %Y') %></li>
     <% if @user.student? %>
-    <h3><%= "#{@user.name} is a tutor on this site" %></h3>
+    <h3><%= "#{@user.name}'s Profile" %></h3>
     <li>Area of expertise: <%= @user.profile.category %></li>
     <li>Availability: <%= @user.profile.availability %></li>
     <li>Qualification: <%= @user.profile.qualification %></li>
@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= f.label :appointment_date %><br />
-    <%= f.date_field :appointment_date %>
+    <%= f.text_field :appointment_date %>
   </div>
 
   <div class="field">
