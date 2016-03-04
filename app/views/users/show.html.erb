@@ -6,7 +6,7 @@
     <% if @user.student? %>
     <h3><%= "#{@user.name}'s Profile" %></h3>
     <li>Area of expertise: <%= @user.profile.category %></li>
-    <li>Availability: <%= @user.profile.availability %></li>
+    <li>Availability: <%= @user.profile.to_array %></li>
     <li>Qualification: <%= @user.profile.qualification %></li>
     <% end %>
   </ul>

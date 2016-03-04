@@ -10,6 +10,7 @@ $(document).on('ready page :load', function() {
 });
 
 $(document).on('page:change', function(){
-
-  $('#user_profile_attributes_availability').datepicker();
+  $('#user_profile_attributes_availability').multiDatesPicker({
+    dateFormat: "yy-mm-dd"
+  });
 });
