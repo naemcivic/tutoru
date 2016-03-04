@@ -4,4 +4,15 @@ class Appointment < ActiveRecord::Base
 
   validates :appointment_date, presence: true
 
+
+  def available?(appointment_date, tutor_availability )
+    if tutor_availability == appointment_date
+      true
+    else
+      false
+    end
+
+  end
+
+
 end
