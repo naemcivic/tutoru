@@ -12,14 +12,14 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-
     @appointment = @user.student_appointments.build(appointment_params)
     tutorid = @appointment.tutor_id
     tutor = User.find(tutorid)
+
     respond_to do |format|
       if @appointment.available?(@appointment.appointment_date, tutor.profile.availability)
         @appointment.save
-        format.html { redirect_to users_path, notice: 'Appointment made'}
+        format.html { redirect_to root_path, notice: 'Appointment made'}
         format.js {}
       else
         format.html { render root_path, alert: 'Try again'}
