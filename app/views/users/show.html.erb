@@ -37,9 +37,10 @@
           <li>Name: <%=@user.name%></li>
           <li>Email: <%=@user.email %></li>
           <li>You have <%= pluralize(@user.student_appointments.count, 'appointment') %>
-      <h1>Appoinments coming up</h1>
+
+            <h1>Appoinment coming up</h1>
           <% @user.student_appointments.each do |student_appointment| %>
-            <% if student_appointment.valid? %>
+          <% if student_appointment.valid? %>
               <li>Tutor name <%= (User.find(student_appointment.tutor_id).name) %></li>
               <li>Appointment Date <%= student_appointment.appointment_date%></li>
             <% end %>
