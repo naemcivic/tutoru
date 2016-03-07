@@ -1,43 +1,51 @@
-  <h1>Tutor's Info</h1>
-  <ul>
-    <li>Tutor's name: <%= @user.name %></li>
-    <li>Tutor's email: <%= @user.email %></li>
-    <li>a valuable member since <%= @user.created_at.strftime('%^b %d %Y') %></li>
-    <% if @user.student? %>
-    <h3><%= "#{@user.name}'s Profile" %></h3>
-    <li>Area of expertise: <%= @user.profile.category %></li>
-    <li>Availability: <%= @user.profile.availability %></li>
-    <li>Qualification: <%= @user.profile.qualification %></li>
-    <% end %>
-  </ul>
+  <% if @user.student? && current_user.student? == false%>
+      <h1>Member's Profile</h1>
+        <ul>
+          <li>Tutor's name: <%= @user.name %></li>
+          <li>Tutor's email: <%= @user.email %></li>
+          <li>a valuable member since <%= @user.created_at.strftime('%^b %d %Y') %></li>
+          <h3><%= "#{@user.name}'s Profile" %></h3>
+          <li>Area of expertise: <%= @user.profile.category %></li>
+          <li>Availability: <%= @user.profile.availability %></li>
+          <li>Qualification: <%= @user.profile.qualification %></li>
+        </ul>
 
-  <% if current_user.student? == false %>
+      <h4>Make an appointment</h4>
+        <%= form_for [@user, @appointment], :remote => true do |f| %>
+          <div id="appointment_errors">
+            <%= render :partial => 'appointment_form_errors' %>
+          </div>
 
-  <h4>Make an appointment</h4>
+          <div class="field">
+            <%= f.label :appointment_date %><br />
+            <%= f.text_field :appointment_date %>
+          </div>
 
-  <%= form_for [@user, @appointment], :remote => true do |f| %>
+          <div class="field">
+             <%= f.hidden_field :tutor_id, :value => params[:id] %>
+          </div>
 
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+  <% else %>
 
-  <div id="appointment_errors">
-    <%= render :partial => 'appointment_form_errors' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :appointment_date %><br />
-    <%= f.text_field :appointment_date %>
-  </div>
-
-  <div class="field">
-     <%= f.hidden_field :tutor_id, :value => params[:id] %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="user-profile">
+      <h1>User's Profile</h1>
+        <ul>
+          <li>Name: <%=@user.name%></li>
+          <li>Email: <%=@user.email %></li>
+          <li>You have <%= pluralize(@user.student_appointments.count, 'appointment') %>
+      <h1>Appoinments coming up</h1>
+          <% @user.student_appointments.each do |student_appointment| %>
+            <% if student_appointment.valid? %>
+              <li>Tutor name <%= (User.find(student_appointment.tutor_id).name) %></li>
+              <li>Appointment Date <%= student_appointment.appointment_date%></li>
+            <% end %>
+          <% end %>
+        </ul>
+    </div>
   <% end %>
-  <% end %>
-
-
-
 
 <%= link_to 'Home', users_path %>

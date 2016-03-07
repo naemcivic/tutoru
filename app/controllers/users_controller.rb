@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @appointment = @user.student_appointments.build
+    @appointment = @user.student_appointments.new
   end
 
   def new

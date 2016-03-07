@@ -14,6 +14,7 @@
     <% if current_user %>
       <% unless current_page?(root_path) %>
         <%= link_to "Logout", :logout, method: :post %></ br>
+        <%= link_to "My Profile", current_user %></ br>
         <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
       <% else %>
 
