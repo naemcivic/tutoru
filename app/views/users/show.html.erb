@@ -1,3 +1,8 @@
+
+
+
+
+
   <% if @user.student? && current_user.student? == false%>
       <h1>Member's Profile</h1>
         <ul>
@@ -41,12 +46,11 @@
             <h1>Appoinment coming up</h1>
           <% @user.student_appointments.each do |student_appointment| %>
           <% if student_appointment.valid? %>
-              <li>Tutor name <%= (User.find(student_appointment.tutor_id).name) %></li>
-              <li>Appointment Date <%= student_appointment.appointment_date%></li>
+              <li>Tutor name: <%= (User.find(student_appointment.tutor_id).name) %></li>
+              <li>Appointment Date: <%= student_appointment.appointment_date%></li>
+              <li>Subject: <%= Profile.find(student_appointment.tutor_id).category%></li>
             <% end %>
           <% end %>
         </ul>
     </div>
   <% end %>
-
-<%= link_to 'Home', users_path %>

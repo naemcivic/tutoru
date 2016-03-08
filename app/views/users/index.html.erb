@@ -6,7 +6,9 @@
       <%= submit_tag "Search" %>
     <% end %>
 
-  <h2>Tutors Available</h2>
-  <div id="tutorlist">
-    <%= render 'user' %>
-  </div>
+  <% if logged_in? %>
+    <h2>Tutors Available</h2>
+    <div id="tutorlist">
+      <%= render 'user' %>
+    </div>
+  <% end %>

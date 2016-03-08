@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root 'users#index'
+  root 'users#show'
   resources :user_sessions
   resources :users do
     resources :appointments
