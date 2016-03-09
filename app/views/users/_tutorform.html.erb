@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: { multiport: true }) do |f| %>
 
   <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -60,10 +60,12 @@
   </div>
 
   <div class="field">
-    <%= profile_fields.label :picture %>
-    <%= profile_fields.text_field :picture %>
+    <%= profile_fields.file_field :avatar %>
   </div>
+
   </div>
+
+
     <% end %>
 
   <div class="action">

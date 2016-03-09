@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # @user.profile.create(user_params[:profile])
       if @user.save
         redirect_to(:users, notice: 'Member was successfully created')
       elsif
@@ -64,10 +65,9 @@ class UsersController < ApplicationController
 
   def user_params
 
-
     params.require(:user)
       .permit(:name, :email, :password, :password_confirmation, :student,
-            profile_attributes:[:category, :qualification, :location, :picture, :availability])
+            profile_attributes:[:category, :qualification, :location, :picture, :availability, :avatar])
 
   end
 

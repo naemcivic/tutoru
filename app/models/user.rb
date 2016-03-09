@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
-  has_many :student_appointments, class_name: 'Appointment', foreign_key: 'student_id'
-  has_many :tutor_appointments, class_name: 'Appointment', foreign_key: 'tutor_id'
+  has_many :student_appointments, class_name: 'Appointment', foreign_key: 'student_id', dependent: :destroy
+  has_many :tutor_appointments, class_name: 'Appointment', foreign_key: 'tutor_id', dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  accepts_nested_attributes_for :profile, reject_if: :all_blank
+  accepts_nested_attributes_for :profile, \
+  :reject_if => proc {|attributes| attributes['avatar'].blank? \
+  && attributes['avatar_cache'].blank?}
 
 
   authenticates_with_sorcery!
