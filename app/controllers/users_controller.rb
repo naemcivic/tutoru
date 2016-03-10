@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def index
     @users = if params[:search]
       Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%")
+    elsif params[:latitude] && params[:longitude]
+      @users = Profile.near([params[:latitude],params[:longitude]], 25, unit: :km)
     else
       Profile.all
     end
@@ -28,7 +30,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # @user.profile.create(user_params[:profile])
       if @user.save
         redirect_to(:users, notice: 'Member was successfully created')
       elsif

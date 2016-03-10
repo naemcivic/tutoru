@@ -1,14 +1,15 @@
-
-
   <h2>Search by the subject or topic</h2>
     <%= form_tag users_path, method: :get, authentication: false, id: 'search-form' do %>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search" %>
     <% end %>
-
   <% if logged_in? %>
+  <%= button_tag "Find Tutors near me", id: "search_nearby" %>
+  <% end %>
+
+
     <h2>Tutors Available</h2>
     <div id="tutorlist">
       <%= render 'user' %>
     </div>
-  <% end %>
+  
