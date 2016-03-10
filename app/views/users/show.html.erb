@@ -1,15 +1,16 @@
 <% if @user.student? && current_user.student? == false%>
-    <h1>Member's Profile</h1>
+    <h1><%= "#{@user.name}'s Profile" %></h1>
+    <div class="tutors-photo">
+      <%= image_tag @user.profile.avatar.url(:thumb) if @user.profile.avatar? %>
+    </div>
       <ul>
         <li>Tutor's name: <%= @user.name %></li>
         <li>Tutor's email: <%= @user.email %></li>
-        <li>a valuable member since <%= @user.created_at.strftime('%^b %d %Y') %></li>
-        <h3><%= "#{@user.name}'s Profile" %></h3>
+        <li>A trusted tutor since <%= @user.created_at.strftime('%^b %d %Y') %></li>
         <li>Area of expertise: <%= @user.profile.category %></li>
         <li>Availability: <%= @user.profile.availability %></li>
         <li>Qualification: <%= @user.profile.qualification %></li>
         <li>Location: <%= @user.profile.location %></li>
-        <li>Tutor's Photo: <%= image_tag @user.profile.avatar.url(:thumb) if @user.profile.avatar? %></li>
       </ul>
 
 
