@@ -79,7 +79,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: tutoru_production
-  username: tutoru
-  password: <%= ENV['TUTORU_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: tutoru
+  host: localhost
