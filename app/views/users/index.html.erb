@@ -7,8 +7,146 @@
   <%= button_tag "Find Tutors near me", id: "search_nearby" %>
   <% end %>
 
-
     <h2>Tutors Available</h2>
     <div id="tutorlist">
       <%= render 'user' %>
     </div>
+
+  <div class="clear">
+    <div class="mobilenav">
+      <ul class="list-menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Tutor</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="fixednav">
+      <div class="logo">TUTOR U</div><div class="hat"></div>
+      <div class="nav-section-list-signup"><a href="#">SIGN IN</a></div>
+      <div class="nav-section-list-enroll"><a href="#">ENROLL</a></div>
+      
+      <div class="menu">MENU</div>
+
+      <div id ="hamburger-closer">
+        <div class="menu-lines"></div>
+        <div class="menu-lines"></div>
+        <div class="menu-lines"></div>
+      </div>
+    </div>
+
+    <div class="bg-wrap">
+      <div class="bcg">
+    <!--    <p class="logo">Tutor U</p>
+        <ul class="nav-menu">
+          <li>About</li>
+          <li>Become Tutor</li>
+          <li>Log In</li>
+          <li>Sign Up</li>
+        </ul> -->
+        <div class="overlay"></div>
+      </div>
+    </div>
+
+
+    <div class="content-container">
+      <div class="blackcontent"></div>
+
+      <div class="first-section">
+        <div class="imghousing-one"><%= image_tag "3.jpg" , class: 'img-layout' %></div>
+        <div class="txthousing-one"><h1 class="h">Go to school where you want</h1><p class="layout">Attend the school of your choice by getting the grades you deserve. Find a tutor to help you with any course work that your having trouble with.</p></div>
+      </div>
+      <div class="second-section">
+        <div class="imghousing-two"><%= image_tag "graduation.jpg", class: 'img-layout'%></div>
+        <div class="txthousing-two"><h1 class="h">Group study to achieve</h1><p class="layout">Studying as a group has been known to boost your performance as you share knowledge. At Tutor U we can arrange group study for you and your mates.</p></div>
+      </div>
+      <div class="third-section">
+        <div class="imghousing-three">
+          <%= image_tag "1.jpg", class: 'img-layout' %></div>
+        <div class="txthousing-three"><h1 class="h">Online study for quick help</h1><p class="layout">Sometimes there's not enough time to wait for an appointment. Connect with a tutor online for instant support.</p></div>
+      </div>
+      <div class="fourth-section">
+        <div class="imghousing-four"><%= image_tag "teacher.jpg", class: 'img-layout' %></div>
+        <div class="txthousing-four"><h1 class="h">Become part of Tutor U</h1><p class="layout">If you have the skills and qualifications. Put them to use by teaching students and see how you can be rewarded for it.</p></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-start"><div class="logo-bottom">TUTOR U</div></div>
+    <div class="footer-signup">
+      <div class="action-statement">Ready to Achieve?</div><div class="display-inline"><a class="signup-button">Sign up</a></div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-width">
+      <div class="table1">
+        <ul>
+          <a href='#'><li>Home</li></a>
+          <a href='#'><li>Courses</li></a>
+          <a href='#'><li>Tutors</li></a>
+          <a href='#'><li>Sign In</li></a>
+          <a href='#'><li>Enroll</li></a>
+        </ul>
+      </div>
+      <div class="table2">
+        <ul>
+          <a href='#'><li>Group Study</li></a>
+          <a href='#'><li>Online Study</li></a>
+          <a href='#'><li>News</li></a>
+          <a href='#'><li>Contact</li></a>
+        </ul>
+      </div>
+      <div class="table3">
+        <p>This site was created by Metturan K. and Phillip C. to give you a presentation of the first app we've ever created. Please enjoy responsibly. Blah Blah Blah blah blah blah. We the best.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- The Modal -->
+    <!-- Modal Content -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">X</span>
+        <p class="modal-signin">SIGN UP</p>
+        <div class="top-modal">kdjfksjflks</div>
+      </div>
+    </div>
+
+    <!-- Modal for log-in -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">X</span>
+        <p class="modal-signin">SIGN UP</p>
+        <div class="top-modal">kdjfksjflks</div>
+      </div>
+    </div>
+
+
+  <!-- SIDE NAV -->
+  <nav id="side-nav">
+    <div class="clear-menu"></div>
+    <a href="#0"><div class="headings-list-start"><p class="item-list">HOME</p></div></a>
+    <a href="#0"><div class="headings-list-start"><p class="item-list">TUTOR</p></div></a>
+    <a href="#0"><div class="headings-list-start"><p class="item-list">ENROLL</p></div></a>
+    <a href="#0"><div class="headings-list-start"><p class="item-list">COURSES</p></div></a>
+    <a href="#0"><div class="headings-list-start"><p class="item-list">GROUP STUDY</p></div></a>
+    <a href="#0"><div class="headings-list-start"><p class="item-list">ONLINE STUDY</p></div></a>
+
+    <!-- navigation -->
+
+    <ul class="little-list">
+      <li class="item-list"><a href="#0">Login</a></li>
+      <li class="item-list"><a href="#0">Sign Out</a></li>
+      <li class="item-list"><a href="#0">Contact</a></li>
+    </ul>
+
+    <div class="item-list-social">
+      <a class="fa fa-twitter social" href="#0"></a>
+      <a class="fa fa-github social" href="#0"></a>
+      <a class="fa fa-facebook social" href="#0"></a>
+      <a class="fa fa-google-plus social" href="#0"></a>
+    </div>
+  </nav>

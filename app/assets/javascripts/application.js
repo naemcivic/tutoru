@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui.multidatespicker
+//= require greensock/TweenMax.min
+//= require jquery.scrollmagic
 //= require turbolinks
 //= require_tree .
+
