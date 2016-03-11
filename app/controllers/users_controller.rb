@@ -3,12 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: [:index, :new, :create]
 
   def index
-    @users = if params[:search]
-      Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%")
-    else params[:latitude] && params[:longitude]
-      @users = Profile.near([params[:latitude],params[:longitude]], 25, unit: :km)
-    end
-
+    @users = Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%").near([params[:latitude],params[:longitude]], 25, unit: :km)
       respond_to do |format|
         format.html
         format.js
