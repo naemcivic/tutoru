@@ -2,7 +2,7 @@
     <% @users.each do |tutor| %>
         <li>Tutor's name: <%= tutor.user.name %></li>
         <li>Tutor's availability: <%= tutor.availability %></li>
-        <li>Area of expertise: <%= tutor.category %></li></br>
+        <li>Area of expertise: <%= tutor.category %></li>
       <% if logged_in? && current_user.student? == false %>
         <li><%= link_to "Book an appointment", tutor.user %></li></br>
       <% end %>
