@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @users = if params[:search]
       Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%")
     else params[:latitude] && params[:longitude]
-      @users = Profile.near([params[:latitude],params[:longitude]], 100, unit: :km)
+      @users = Profile.near([params[:latitude],params[:longitude]], 25, unit: :km)
     end
 
       respond_to do |format|

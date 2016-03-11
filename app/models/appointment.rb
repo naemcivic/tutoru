@@ -11,8 +11,6 @@ class Appointment < ActiveRecord::Base
     else
       false
     end
-
   end
-
 
 end
