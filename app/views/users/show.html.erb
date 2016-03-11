@@ -1,7 +1,7 @@
 <% if @user.student? && current_user.student? == false%>
     <h1><%= "#{@user.name}'s Profile" %></h1>
     <div class="tutors-photo">
-      <%= image_tag @user.profile.avatar.url(:thumb) if @user.profile.avatar? %>
+      <%= image_tag(@user.profile.avatar.url(:thumb)) if @user.profile.avatar? %>
     </div>
       <ul>
         <li>Tutor's name: <%= @user.name %></li>
