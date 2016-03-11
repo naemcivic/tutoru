@@ -1,6 +1,6 @@
   <ul id:"alltutors">
     <% @users.each do |tutor| %>
-        <%= image_tag(tutor.avatar.url)(:thumb) %>
+        <%= image_tag tutor.avatar.url(:thumb) %>
         <li>Tutor's name: <%= tutor.user.name %></li>
         <li>Tutor's availability: <%= tutor.availability %></li>
         <li>Area of expertise: <%= tutor.category %></li>
