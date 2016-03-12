@@ -35,6 +35,7 @@ gem 'mini_magick'
 # sorcery gem for user authentication
 gem 'sorcery'
 gem 'geocoder'
+gem 'figaro'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
