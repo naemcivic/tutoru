@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
 
+
+
   root 'users#index'
   resources :user_sessions
-  resources :users do
+  resources :users, only: [:new, :show, :index, :create] do
     resources :appointments
     resources :profiles
   end

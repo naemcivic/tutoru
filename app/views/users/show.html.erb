@@ -38,12 +38,13 @@
 <% else %>
 
   <div class="user-profile">
-    <h1>User's Profile</h1>
+    <h1>My Profile</h1>
       <ul>
         <li>Name: <%=@user.name%></li>
         <li>Email: <%=@user.email %></li>
-      <% if current_user.student? %>
+      <% if current_user.student? && current_user.id == @user.id %>
         <li>My availability: <%=@user.profile.availability%></li>
+        <%= link_to 'edit availability', edit_user_profile_path(@user.profile.user_id, @user.profile.id) %></br>
       <% end %>
   <% if current_user.student? == false %>
   <h2>You have <%= pluralize(@user.student_appointments.count, 'appointment') %></h2>
