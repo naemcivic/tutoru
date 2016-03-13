@@ -28,8 +28,7 @@
   }
 
   $(document).on('page:change', function(){
-
-    $('#appointment_appointment_date').multiDatesPicker({
+      $('#appointment_appointment_date').multiDatesPicker({
       dateFormat: "yy-mm-dd"
     });
 
