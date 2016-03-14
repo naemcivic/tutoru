@@ -1,4 +1,7 @@
   <ul id:"alltutors">
+    <% if @users.present? %>
+     <h2>Tutors closest to <%= current_user.name %></h2>
+    <% end %>
     <% @users.each do |tutor| %>
         <%= image_tag tutor.avatar.url(:thumb) %>
         <li>Tutor's name: <%= tutor.user.name %></li>
