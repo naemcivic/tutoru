@@ -7,8 +7,10 @@ class User < ActiveRecord::Base
   :reject_if => proc {|attributes| attributes['avatar'].blank? \
   && attributes['avatar_cache'].blank?}
 
-
   authenticates_with_sorcery!
+
+  acts_as_votable
+  acts_as_voter
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes["password"] }
   validates :password, confirmation: true, if: -> { new_record? || changes["password"] }
@@ -24,6 +26,6 @@ class User < ActiveRecord::Base
       else
         false
       end
-
   end
+
 end

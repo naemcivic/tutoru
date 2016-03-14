@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-
   skip_before_action :require_login, only: [:index, :new, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     @users = Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%").near([params[:latitude],params[:longitude]], 25, unit: :km)
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.find(params[:id])
     @appointment = @user.student_appointments.new
   end
 
@@ -33,36 +32,42 @@ class UsersController < ApplicationController
       end
   end
 
-
-
-
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-      if @user.update_attributes(user_params)
-        redirect_to user_path(@user), notice: "User info update"
-      else
-        render :edit
-      end
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user), notice: "User info update"
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to 'root'
   end
 
+  def upvote
+    @user.upvote_from current_user
+    redirect_to @user
+  end
+
+  def downvote
+    @user.downvote_from current_user
+    redirect_to @user
+  end
+
   private
 
-  def user_params
+  def set_user
+    @user = User.find(params[:id])
+  end
 
+  def user_params
     params.require(:user)
       .permit(:name, :email, :password, :password_confirmation, :student,
             profile_attributes:[:category, :qualification, :location, :picture, :availability, :avatar])
-
   end
 
 end

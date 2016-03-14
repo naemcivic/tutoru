@@ -12,4 +12,14 @@ class Profile < ActiveRecord::Base
   def to_array
     availability.split(",")
   end
+
+  #method to display upvote in the user#index
+  def display_upvote
+    User.find(self.user_id).get_upvotes.size
+  end
+  #method to display downvote in the user#index
+  def display_downvote
+    User.find(self.user_id).get_downvotes.size
+  end
+
 end

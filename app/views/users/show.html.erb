@@ -38,6 +38,22 @@
         </div>
       <% end %>
 
+      <%= link_to like_user_path(@user), class: "like", method: :put do %>
+        <button type="button">
+          Upvote
+        </button>
+        <%= pluralize(@user.get_upvotes.size,"upvote") %>
+      <% end %>
+
+      <%= link_to unlike_user_path(@user), class: "like", method: :put do %>
+        <button type="button">
+          Downvote
+        </button>
+        <%= pluralize(@user.get_downvotes.size,"downvote") %>
+      <% end %>
+
+
+
 <% else %>
 
   <div class="user-profile">

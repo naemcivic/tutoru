@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :user_sessions
   resources :users, only: [:new, :show, :index, :create] do
+    member do
+      put "like" => "users#upvote"
+      put "unlike" => "users#downvote"
+    end
     resources :appointments
     resources :profiles
   end
