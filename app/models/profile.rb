@@ -10,24 +10,25 @@ class Profile < ActiveRecord::Base
 
   #display availability in an array
   def display_availability
-    if self.availability == ""
-      self.availability = "Not Available"
+    if self.availability == "Not available"
+      self.availability
     else
       self.availability = availability.split(",")
     end
   end
-
   #method to remove date from tutor's availability
   def delete_availability(appointmentdate,profile_date)
     availability_split = profile_date.split(",")
-     deleted_date = availability_split.delete_if {|date| date == appointmentdate}
-     self.availability = deleted_date.join(",")
+    appointmentdate_split = appointmentdate.split(",")
+    availability_remainder = availability_split - appointmentdate_split
+     self.availability = availability_remainder.join(",")
+     if self.availability == ""
+       self.availability = "Not available"
+     else
+       self.availability
+     end
      return
   end
-
-
-
-
   #method to display upvote in the user#inde
   def display_upvote
     User.find(self.user_id).get_upvotes.size

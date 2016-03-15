@@ -2,15 +2,6 @@ class AppointmentsController < ApplicationController
   before_action :load_user
   before_action :require_login, only: [:create,:destroy]
 
-  def index
-  end
-
-  def show
-  end
-
-  def new
-  end
-
   def create
     @appointment = @user.student_appointments.build(appointment_params)
     tutorid = @appointment.tutor_id
@@ -29,16 +20,6 @@ class AppointmentsController < ApplicationController
       end
     end
   end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
 
   private
   def appointment_params
