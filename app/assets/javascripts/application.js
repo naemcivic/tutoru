@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui.multidatespicker
+//= require 'greensock/TweenMax'
+//= require 'greensock/jquery.gsap.js'
 //= require turbolinks
 //= require_tree .
