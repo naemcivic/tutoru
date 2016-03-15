@@ -28,4 +28,9 @@ class User < ActiveRecord::Base
       end
   end
 
+  #create method to format the member's join date
+  def member_since
+    self.created_at.strftime('%^b %d %Y')
+  end
+
 end

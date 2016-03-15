@@ -18,7 +18,7 @@ class AppointmentsController < ApplicationController
     @tutor = tutor
     respond_to do |format|
       if @appointment.available?(@appointment.appointment_date, tutor.profile.availability)
-         @tutor.profile.availability = "Not available"
+         @tutor.profile.delete_availability(@appointment.appointment_date, @tutor.profile.availability)
          @tutor.save
          @appointment.save
       format.html { redirect_to root_path, notice: 'Appointment made'}

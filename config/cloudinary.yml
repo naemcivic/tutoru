@@ -1,7 +1,7 @@
 ---
 development:
   cloud_name: naemcivic
-  api_key: '525598947838827'
+  api_key: ENV['cloudinary_api_key']
   api_secret: 5xw7HvgUoPiaAcStv8MMVh9d4I8
   enhance_image_tag: true
   static_image_support: false
