@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    mail(to: @user.email , subject: "welcome")
+    mail(to: @user.email , subject: "Welcome to TutorU")
   end
 
 end
