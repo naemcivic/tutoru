@@ -27,25 +27,6 @@ ActiveRecord::Schema.define(version: 20160314000838) do
   add_index "appointments", ["student_id"], name: "index_appointments_on_student_id", using: :btree
   add_index "appointments", ["tutor_id"], name: "index_appointments_on_tutor_id", using: :btree
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "conversation_id"
-    t.integer  "user_id"
-    t.boolean  "read"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
-
   create_table "profiles", force: :cascade do |t|
     t.text     "qualification"
     t.string   "category"
