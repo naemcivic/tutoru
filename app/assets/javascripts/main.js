@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+jQuery(document).on("ready page:load",function() {
 
 //         jQuery(document).ready(function($) {
 // (function($) {
@@ -85,7 +85,7 @@ hamburger.click(function (){
      $('#side-nav').removeClass('menu-open');
      menuTl.reverse();
     }
-  })
+  });
 
     // var layoutTl = new TimelineMax();
 
@@ -192,4 +192,4 @@ hamburger.click(function (){
     // });
 // } )( jQuery );
 // });
-})(jQuery);
+});

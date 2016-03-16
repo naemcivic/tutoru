@@ -31,6 +31,45 @@ body {
 	background: url(quote1.jpg) center center no-repeat;
 }
 
+#search-form-submit {
+	background-color: #00BCD4;
+	font-size: 15px;
+	font-family: 'Nunito';
+	-webkit-appearance: none;
+	box-shadow: none !important;
+	border: none !important;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	color: white;
+	text-transform: uppercase;
+	padding: 11px 11px;
+	border-radius: 4px;
+
+}
+
+.h2search {
+	font-size: 13px;
+	font-family: 'Montserrat';
+	color: white;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+.search {
+	position: absolute;
+	z-index: 50;
+	left: 40%;
+	top: 40%;
+	background-color: rgba(5, 104, 175, 0.28);
+	padding: 20px 50px;
+	border-radius: 5px;
+	box-shadow: 2px solid white;
+
+}
+
 .bg-wrap {
 	overflow: hidden;	
 }
@@ -44,8 +83,8 @@ body {
 }
 
 .bcg {
-	-webkit-transition: -webkit-transform 8s ease-out;
-	        transition: transform 8s ease-out;
+	-webkit-transition: -webkit-transform 4s ease-out;
+	        transition: transform 4s ease-out;
 	-webkit-transform: scale(1);
 	    -ms-transform: scale(1);
 	        transform: scale(1);
@@ -55,9 +94,9 @@ body {
 }
 
 .is-loaded {
-	-webkit-transform: scale(1.08);
-	    -ms-transform: scale(1.08);
-	        transform: scale(1.08); 
+	-webkit-transform: scale(1.05);
+	    -ms-transform: scale(1.05);
+	        transform: scale(1.05); 
 }
 
 .overlay {

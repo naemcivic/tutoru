@@ -19,7 +19,6 @@ gem 'greensock-rails'
 gem 'jquery-ui-rails'
 gem 'neat', '~> 1.7', '>= 1.7.4'
 gem 'multi-dates-picker-rails'
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -52,7 +51,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'pry-rails'
-
+  gem 'letter_opener'
 end
 
 group :development do
