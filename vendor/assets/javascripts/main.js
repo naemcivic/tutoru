@@ -1,42 +1,38 @@
-jQuery(document).on("ready page:load",function() {
-
-//         jQuery(document).ready(function($) {
-// (function($) {
+        jQuery(document).ready(function($) {
+(function($) {
 
 
-//     var controller = new ScrollMagic.Controller()
+    var controller = new ScrollMagic.Controller()
 
-    var introTl = new TimelineMax();
-    introTl
+    var introTL = new TimelineMax();
+    introTL
         .from($('.hat'), 2, {autoAlpha: 0, yPercent: - 50, scale: 0.3}, 0)
         .to($('.bcg'), 1, {className:"+=is-loaded"}, 0);
 
-        introTl.play();
-
-//     var introScene = new ScrollMagic.Scene({
-//         triggerElement: '.bcg'
-//     })
-//     .setTween(introTL)
-//     .addTo(controller);
+    var introScene = new ScrollMagic.Scene({
+        triggerElement: '.bcg'
+    })
+    .setTween(introTL)
+    .addTo(controller);
 
 
 
     // Darken intro bcg
 
-    // var openingTl = new TimelineMax();
+    var openingTl = new TimelineMax();
 
-    // openingTl
-    //     .to($('.bcg'), 0.2, {autoAlpha: 0, ease:Power1.easeNone})
-    //     // .to($('.bcg'), 1.4, {y: '-10%', ease:Power1.easeOut}, '-=0.9')
-    //     // .to($('.bcg'), 0.7, {autoAlpha: 0.5, ease:Power1.easeNone}, '-=1.95');
+    openingTl
+        .to($('.bcg'), 0.2, {autoAlpha: 0, ease:Power1.easeNone})
+        // .to($('.bcg'), 1.4, {y: '-10%', ease:Power1.easeOut}, '-=0.9')
+        // .to($('.bcg'), 0.7, {autoAlpha: 0.5, ease:Power1.easeNone}, '-=1.95');
 
-    // var openingScene = new ScrollMagic.Scene({
-    //     triggerElement: '.bcg',
-    //     triggerHook: 0,
-    //     duration: "100%"
-    // })
-    // .setTween(openingTl)
-    // .addTo(controller);
+    var openingScene = new ScrollMagic.Scene({
+        triggerElement: '.bcg',
+        triggerHook: 0,
+        duration: "100%"
+    })
+    .setTween(openingTl)
+    .addTo(controller);
 
     // var layoutScene = new ScrollMagic.Scene({
     //     duration: 300,
@@ -44,6 +40,7 @@ jQuery(document).on("ready page:load",function() {
     // })
     // .setTween()
 
+})(jQuery);
 
 
 var hamburger = $('#hamburger-closer');
@@ -85,7 +82,7 @@ hamburger.click(function (){
      $('#side-nav').removeClass('menu-open');
      menuTl.reverse();
     }
-  });
+  })
 
     // var layoutTl = new TimelineMax();
 
@@ -120,6 +117,8 @@ hamburger.click(function (){
     //     $('.mobilenav').fadeToggle(400);
     //     $('body').toggleClass('.no-scroll'); 
 
+});
+
 // Modal
 
     var modal = document.getElementById('myModal');
@@ -138,13 +137,6 @@ hamburger.click(function (){
     btn.add(btn2).on('click', function(e){
         e.preventDefault();
         modal.style.display = "block";
-            $.ajax({
-                url: 'login',
-                method: 'get',
-                dataType: 'html'
-            }).done(function(data){
-                $('.top-modal').html(data);
-            })
     });
 
     span.onclick = function() {
@@ -196,5 +188,3 @@ hamburger.click(function (){
 //         }
     // });
 // } )( jQuery );
-
-});
