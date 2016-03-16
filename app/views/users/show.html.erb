@@ -72,6 +72,7 @@
 
     <% @user.student_appointments.each do |student_appointment| %>
     <% if student_appointment.valid? %>
+      <%= image_tag User.find(student_appointment.tutor_id).profile.avatar.url(:thumb) %>
       <li>Tutor name: <%= (User.find(student_appointment.tutor_id).name) %></li>
       <li>Appointment Date: <%= student_appointment.appointment_date%></li>
       <li>Subject: <%= User.find(student_appointment.tutor_id).profile.category%></li></br>
