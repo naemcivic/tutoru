@@ -27,11 +27,13 @@
     console.log(error.message);
   }
 
-  $(document).on('page:change', function(){
+
+
+$(document).on('page:change', function(){
     $('#appointment_appointment_date').multiDatesPicker({
       dateFormat: "yy-mm-dd"
     });
     $('#user_profile_attributes_availability').multiDatesPicker({
       dateFormat: "yy-mm-dd"
     });
-  });
+});
