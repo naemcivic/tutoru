@@ -140,6 +140,13 @@ hamburger.click(function (){
     btn.add(btn2).on('click', function(e){
         e.preventDefault();
         modal.style.display = "block";
+            $.ajax({
+                url: 'login',
+                method: 'get',
+                dataType: 'html'
+            }).done(function(data){
+                $('.top-modal').html(data);
+    })
     });
 
     span.onclick = function() {
