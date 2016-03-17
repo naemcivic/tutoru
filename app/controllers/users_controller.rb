@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         auto_login(@user)
-        UserMailer.delay(run_at: 5.minutes.from_now).welcome_email(@user)
+        UserMailer.welcome_email(@user).deliver_later
         redirect_to(:users, notice: 'Member was successfully created')
       elsif
         @user.student?
