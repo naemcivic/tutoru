@@ -90,7 +90,7 @@ body {
 }
 
 .bg-wrap {
-	overflow: hidden;	
+	overflow: hidden;
 }
 
 .bcg {
@@ -109,13 +109,13 @@ body {
 	        transform: scale(1);
 	-webkit-transform-origin: top center;
 	    -ms-transform-origin: top center;
-	        transform-origin: top center; 
+	        transform-origin: top center;
 }
 
 .is-loaded {
 	-webkit-transform: scale(1.05);
 	    -ms-transform: scale(1.05);
-	        transform: scale(1.05); 
+	        transform: scale(1.05);
 }
 
 .overlay {
@@ -265,7 +265,7 @@ color: #222222;
 	font-size: 15px;
 }
 
-.content-container { 
+.content-container {
 	background-color: white;
 }
 
@@ -323,7 +323,7 @@ color: #222222;
 	float: left;
 	height: 450px;
 	width: 55%;
-	margin-right: 92px; 
+	margin-right: 92px;
 }
 
 .imghousing-three {
@@ -519,7 +519,7 @@ font-size: 14px;
 }
 
 /*@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0} 
+    from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
 }
 
@@ -533,14 +533,14 @@ font-size: 14px;
 
 @media only screen and (max-width: 1100px) {
 		.action-statement {
-		margin-left: -132px; 
+		margin-left: -132px;
 	}
 
 }
 
 @media only screen and (max-width: 900px) {
 		.action-statement {
-		margin-left: -119px; 
+		margin-left: -119px;
 	}
 
 	.h {
@@ -563,7 +563,7 @@ font-size: 14px;
 
 @media only screen and (max-width: 631px) {
 		.action-statement {
-		margin-left: -85px; 
+		margin-left: -85px;
 	}
 
 	.imghousing-two {
@@ -608,7 +608,7 @@ font-size: 14px;
 
 @media only screen and (max-width: 810px) {
 	.table3 {
-		font-size: 10px; 
+		font-size: 10px;
 		transform: translate(0, -18px);
 	}
 
@@ -635,7 +635,7 @@ font-size: 14px;
 
 @media only screen and (max-width: 567px) {
 	.table3 {
-		font-size: 10px; 
+		font-size: 10px;
 		transform: translate(0, -18px);
 		display: block;
 		margin: 0 auto;

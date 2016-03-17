@@ -10,12 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require greensock/TweenMax
-//= require greensock/jquery.gsap.js
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require jquery-ui/datepicker
 //= require jquery-ui.multidatespicker
+//= require 'greensock/TweenMax'
+//= require 'greensock/jquery.gsap.js'
 
 //= require turbolinks
 //= require_tree .
