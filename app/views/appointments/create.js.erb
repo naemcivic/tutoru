@@ -1,13 +1,7 @@
 <% if @appointment.errors.present? %>
-  $("#appointment_errors").html("<%= j(render(:partial => 'users/appointment_form_errors')) %>");
+  $("#appointment_errors").html("<%= escape_javascript(render(:partial => '/users/appointment_form_errors')) %>");
 <% else %>
+  $("#appointment-made").html("Appointment made");
   $("#appointment_errors").html("");
   $("#new_appointment")[0].reset();
 <% end %>
-
-
-
-
-
-
-  

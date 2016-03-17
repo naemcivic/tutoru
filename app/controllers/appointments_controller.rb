@@ -8,8 +8,8 @@ class AppointmentsController < ApplicationController
     tutor = User.find(tutorid)
     @tutor = tutor
     respond_to do |format|
-         @appointment.save
-      format.html { redirect_to root_path, notice: 'Appointment made'}
+      if @appointment.save
+        format.html {redirect_to users_path, notice: 'Appointment made'}
         format.js {}
       else
         format.html { render root_path, alert: 'Try again'}
