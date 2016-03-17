@@ -7,15 +7,6 @@ class Profile < ActiveRecord::Base
   def convert_km
     (distance * 1.61).round(2)
   end
-
-  #display availability in an array
-  def display_availability
-    if self.availability == "Not available"
-      self.availability
-    else
-      self.availability = availability.split(",")
-    end
-  end
   #method to remove date from tutor's availability
   def delete_availability(appointmentdate,profile_date)
     availability_split = profile_date.split(",")
