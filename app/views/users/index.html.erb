@@ -15,13 +15,9 @@
 
     <div class="fixednav">
       <div class="logo">TUTOR U</div><div class="hat"></div>
-      <div class="nav-section-list-signup"><a href="#">SIGN IN</a></div>
-      <div class="nav-section-list-enroll"><a href="#">ENROLL</a></div>
-            <% if logged_in? && current_page?(users_path) %>
-        <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
-        <%= link_to "My Profile", current_user %></ br>
-        <%= link_to "Logout", :logout, method: :post %></ br>
-      <% end %>
+
+      
+      <%= render 'nav' %>
 
       <div class="menu">MENU</div>
 
@@ -110,7 +106,7 @@
 
     <!-- The Modal -->
     <!-- Modal Content -->
-    <div id="myModal" class="modal">
+<!--     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">X</span>
         <p class="modal-signin">SIGN IN</p>
@@ -121,9 +117,9 @@
         </div>
       </div>
     </div>
-
+ -->
 <!-- Enroll Modal -->
-        <div id="Modal" class="modal">
+<!--         <div id="Modal" class="modal">
       <div class="modal-content1">
         <span class="close">X</span>
         <p class="modal-signin">ENROLL</p>
@@ -131,7 +127,7 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 
