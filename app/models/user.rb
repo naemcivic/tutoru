@@ -33,4 +33,6 @@ class User < ActiveRecord::Base
     self.created_at.strftime('%^b %d %Y')
   end
 
+
+
 end
