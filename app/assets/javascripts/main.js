@@ -123,10 +123,13 @@ hamburger.click(function (){
 // Modal
 
     var modal = document.getElementById('myModal');
+    var modal1 = document.getElementById('Modal');
     var btn = $('.signup-button' );
-    var span = document.getElementsByClassName('close')[0];
+    var span = document.getElementsByClassName('close');
     var btn2 = $('.nav-section-list-signup')
-    var enroll = $('nav-section-list-enroll')
+    var enrollModal = $('.enrollModal')
+    var btn3 = $('.nav-section-list-enroll')
+
     // var modal = $('myModal');
     // var btn = $('signup-button');
     // var span = $('close')[0];
@@ -156,22 +159,29 @@ hamburger.click(function (){
             modal.style.display = "none";
         }
     };
-
-    enroll.on('click', function(e){
+  
+    btn3.on('click', function(e){
         e.preventDefault();
-        modal.style.display = "block";
+        modal1.style.display = "block";
+        $.ajax({
+            url: '/users/new',
+            method: 'get',
+            dataType: 'html'
+        }).done(function(data){
+            $('.top-modal').html(data);
+        })
     });
 
     span.onclick = function() {
-        modal.style.display = "none";
+        console.log("fsd")
+        modal1.style.display = "none";
     };
 
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == modal1) {
+            modal1.style.display = "none";
         }
     };
-  
     // btn.click(function(){
     //     modal.css({"display": "block"});
     // });
@@ -185,16 +195,5 @@ hamburger.click(function (){
     //     modal.fadeOut(400, function() {
     //         modal.remove();
     // });
-
-
-// ( function( $ ) {
-//     // Init Skrollr
-//     var s = skrollr.init({
-//         render: function(data) {
-//             //Debugging - Log the current scroll position.
-//             console.log(data.curTop);
-//         }
-    // });
-// } )( jQuery );
 
 });

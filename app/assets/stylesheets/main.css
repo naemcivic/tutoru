@@ -19,6 +19,29 @@ a:hover {
 body {
 }
 
+input[name="email"], input[name="password"], input[name="search"],
+input[name="user[name]"], input[name="user[email]"], input[name="user[password]"],
+input[name="user[password_confirmation]"] {
+	width: 80%;
+	height: 30px;
+	font-size: 18px;
+	font-family: 'Nunito';
+	font-weight: 300;
+}
+
+input[value="Create User"] {
+	font-size: 12px;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	background-color: white;
+	color: black;
+	border: 0.5px solid black !important;
+	-webkit-appearance: none;
+	width: 81.5%;
+	height: 35px;
+	margin-top: 13px;
+}
+
 .display-inline {
 	display: inline-block;
 }
@@ -42,9 +65,30 @@ body {
 	transition: all 0.2s ease;
 	color: white;
 	text-transform: uppercase;
-	padding: 11px 11px;
+	padding: 11px;
 	border-radius: 4px;
+	margin: 0 auto;
+	text-align: center;
+}
 
+#search-form-submit:hover {
+	-webkit-transition: background-color 0.3s ease-out;
+	-moz-transition: background-color 0.3s ease-out;
+	-o-transition: background-color 0.3s ease-out;
+	transition: background-color 0.3s ease-out;
+	background-color: #2395E8;
+}
+
+#search-form-submit:active {
+	-webkit-transform: scale 0.3s ease-out;
+	-moz-transform: scale 0.3s ease-out;
+	-o-transform: scale 0.3s ease-out;
+	transform: scale 0.3s ease-out;
+	transform: scale(0.9);
+}
+
+#search-form-submit:focus {
+	outline: 0;
 }
 
 .h2search {
@@ -61,11 +105,18 @@ body {
 	font-size: 12px;
 	font-family: 'Montserrat';
 	text-transform: uppercase;
-	background-color: #00BCD4;
-	margin-top: 10px;
-	color: white;
-	border: none !important;
+	background-color: white;
+	margin-top: 20px;
+	color: black;
+	border: 0.5px solid black !important;
 	-webkit-appearance: none;
+	width: 81.5%;
+	height: 35px;
+}
+
+.login:hover, input[value="Create User"]:hover {
+	background-color: black;
+	color: white;
 }
 
 .field {
@@ -74,16 +125,17 @@ body {
 	font-weight: 300;
 	margin-top: 8px;
 	margin-bottom: 8px;
-
 }
 
 .search {
-	position: absolute;
+	position: relative;
 	z-index: 50;
-	left: 40%;
-	top: 40%;
-	background-color: rgba(5, 104, 175, 0.28);
-	padding: 20px 50px;
+	left: 50%;
+	top: 50%;
+	width: 60%;
+	transform: translate(-50%, -50%);
+/*	background-color: rgba(5, 58, 154, 0.2);*/
+	padding: 45px 45px;
 	border-radius: 24px;
 	box-shadow: 2px solid white;
 
@@ -98,7 +150,6 @@ body {
 	width: 100%;
 	background:url(suitmath.jpg) no-repeat center center;
 	background-size: 100% 100%;
-
 }
 
 .bcg {
@@ -485,7 +536,6 @@ font-size: 14px;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgb(0,0,0, 0.4);
 }
 
 .modal-content {
@@ -494,7 +544,18 @@ font-size: 14px;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 32%;
-	height: 270px;
+	height: 200px;
+	padding-bottom: 25px;
+}
+
+.modal-content1 {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 32%;
+	height: 310px;
+	padding-bottom: 34px;
 }
 
 .modal-signin {
@@ -534,6 +595,10 @@ font-size: 14px;
 @media only screen and (max-width: 1100px) {
 		.action-statement {
 		margin-left: -132px; 
+	}
+
+	.layout {
+		font-size: 13px;
 	}
 
 }
@@ -622,6 +687,11 @@ font-size: 14px;
 
 	.menu {
 		right: 11%;
+	}
+
+	.modal-content, .modal-content1 {
+		margin: 20% auto;
+		width: 70%;
 	}
 
 }
