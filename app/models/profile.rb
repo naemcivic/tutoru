@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+  require 'date'
   belongs_to :user
   mount_uploader :avatar, AvatarUploader
   geocoded_by :location
