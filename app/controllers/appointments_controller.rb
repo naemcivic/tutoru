@@ -6,13 +6,10 @@ class AppointmentsController < ApplicationController
     @appointment = @user.student_appointments.build(appointment_params)
     tutorid = @appointment.tutor_id
     tutor = User.find(tutorid)
-    @tutor = tutor
     respond_to do |format|
-      if @appointment.available?(@appointment.appointment_date, tutor.profile.availability)
-         @tutor.profile.delete_availability(@appointment.appointment_date, @tutor.profile.availability)
-         @tutor.save
-         @appointment.save
-      format.html { redirect_to root_path, notice: 'Appointment made'}
+      if @appointment.available?(tutor)
+          @appointment.save
+        format.html {redirect_to users_path, notice: 'Appointment made'}
         format.js {}
       else
         format.html { render root_path, alert: 'Try again'}

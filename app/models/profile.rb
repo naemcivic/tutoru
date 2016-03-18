@@ -4,32 +4,17 @@ class Profile < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
+  #a method to format availability in tutor's profile
+  def tutor_availability
+    self.availability.strftime('%A %b %d, %Y %I:%M %P')
+  end
+
+  #a method to show the tutor's distance in KMs
   def convert_km
     (distance * 1.61).round(2)
   end
 
-  #display availability in an array
-  def display_availability
-    if self.availability == "Not available"
-      self.availability
-    else
-      self.availability = availability.split(",")
-    end
-  end
-  #method to remove date from tutor's availability
-  def delete_availability(appointmentdate,profile_date)
-    availability_split = profile_date.split(",")
-    appointmentdate_split = appointmentdate.split(",")
-    availability_remainder = availability_split - appointmentdate_split
-     self.availability = availability_remainder.join(",")
-     if self.availability == ""
-       self.availability = "Not available"
-     else
-       self.availability
-     end
-     return
-  end
-  #method to display upvote in the user#inde
+  #method to display upvote in the user#index
   def display_upvote
     User.find(self.user_id).get_upvotes.size
   end

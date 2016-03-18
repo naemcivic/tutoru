@@ -19,8 +19,12 @@ module Tutoru
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
+    #Set time zone to Eastern
+    config.time_zone = 'Eastern Time (US & Canada)'
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    # Adding Delayed_Job queueing for mailer functions
+    config.active_job.queue_adapter = :delayed_job
+
   end
 end

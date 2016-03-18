@@ -66,7 +66,7 @@ hamburger.click(function (){
      if( menuTl.progress()==0 ) {
         menuTl.play();
      } else {
-        menuTl.reverse(); 
+        menuTl.reverse();
      }
 
      $('.header').toggleClass('menu-open');
@@ -101,8 +101,8 @@ hamburger.click(function (){
 //     if ( turn % 2 === 0) {
 //         menuTl.play();
 //         $('.mobilenav').fadeToggle(400);
-//         $('body').toggleClass('.no-scroll'); 
-//         hamburger.off('click','body') 
+//         $('body').toggleClass('.no-scroll');
+//         hamburger.off('click','body')
 //         turn++;
 //     } else {
 //         menuOut.play();
@@ -112,13 +112,13 @@ hamburger.click(function (){
 //     };
 
 // });
- 
+
 
 
     // hamburger.on('click', function(){
     //     menuTl.play();
     //     $('.mobilenav').fadeToggle(400);
-    //     $('body').toggleClass('.no-scroll'); 
+    //     $('body').toggleClass('.no-scroll');
 
 // Modal
 
@@ -182,6 +182,7 @@ hamburger.click(function (){
             modal1.style.display = "none";
         }
     };
+
     // btn.click(function(){
     //     modal.css({"display": "block"});
     // });

@@ -1,13 +1,10 @@
-<% if @appointment.errors.present? %>
-  $("#appointment_errors").html("<%= j(render(:partial => 'users/appointment_form_errors')) %>");
-<% else %>
+<% if @appointment.valid? %>
   $("#appointment_errors").html("");
   $("#new_appointment")[0].reset();
+  $(window.location.replace("/users/<%= current_user.id %>"))
+<% else %>
+  <% if @appointment %>
+  $("#appointment_errors").html("Appointment can't be created, choose the correct date and time.")
+  $("#after-appointment").html("")
+  <% end %>
 <% end %>
-
-
-
-
-
-
-  
