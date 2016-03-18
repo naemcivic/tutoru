@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'date'
   has_many :student_appointments, class_name: 'Appointment', foreign_key: 'student_id', dependent: :destroy
   has_many :tutor_appointments, class_name: 'Appointment', foreign_key: 'tutor_id', dependent: :destroy
   has_one :profile, dependent: :destroy
