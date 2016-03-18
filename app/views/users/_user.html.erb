@@ -2,7 +2,7 @@
     <% @users.each do |tutor| %>
         <%= image_tag tutor.avatar.url(:thumb) %>
         <li>Tutor's name: <%= tutor.user.name %></li>
-        <li>Tutor's availability: <%= tutor.tutor_availability %></li>
+        <li>Tutor's availability: <%= tutor.availability.strftime('%A %b %d, %Y') %></li>
         <li>Area of expertise: <%= tutor.category %></li>
         <li>Tutor's Location: <%= tutor.location %></li>
         <li>Distance to tutor's location <%= tutor.convert_km %>kms</li>
