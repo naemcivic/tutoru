@@ -17,6 +17,11 @@
       <div class="logo">TUTOR U</div><div class="hat"></div>
       <div class="nav-section-list-signup"><a href="#">SIGN IN</a></div>
       <div class="nav-section-list-enroll"><a href="#">ENROLL</a></div>
+            <% if logged_in? && current_page?(users_path) %>
+        <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
+        <%= link_to "My Profile", current_user %></ br>
+        <%= link_to "Logout", :logout, method: :post %></ br>
+      <% end %>
 
       <div class="menu">MENU</div>
 
