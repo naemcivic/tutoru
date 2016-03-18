@@ -7,7 +7,7 @@ class Profile < ActiveRecord::Base
 
   #a method to format availability in tutor's profile
   def tutor_availability
-    self.availability.strftime('%A %b %d, %Y %I:%M %P')
+    self.availability.to_datetime.strftime('%A %b %d, %Y %I:%M %P')
   end
 
   #a method to show the tutor's distance in KMs
