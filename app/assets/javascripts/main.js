@@ -6,12 +6,12 @@ jQuery(document).on("ready page:load",function() {
 
 //     var controller = new ScrollMagic.Controller()
 
-    var introTl = new TimelineMax();
-    introTl
-        .from($('.hat'), 2, {autoAlpha: 0, yPercent: - 50, scale: 0.3}, 0)
-        .to($('.bcg'), 1, {className:"+=is-loaded"}, 0);
+    // var introTl = new TimelineMax();
+    // introTl
+    //     .from($('.hat'), 2, {autoAlpha: 0, yPercent: - 50, scale: 0.3}, 0)
+    //     .to($('.bcg'), 1, {className:"+=is-loaded"}, 0);
 
-        introTl.play();
+    //     introTl.play();
 
 //     var introScene = new ScrollMagic.Scene({
 //         triggerElement: '.bcg'
@@ -122,13 +122,13 @@ hamburger.click(function (){
 
 // Modal
 
-    var modal = document.getElementById('myModal');
-    var modal1 = document.getElementById('Modal');
-    var btn = $('.signup-button' );
-    var span = document.getElementsByClassName('close');
-    var btn2 = $('.nav-section-list-signup')
-    var enrollModal = $('.enrollModal')
-    var btn3 = $('.nav-section-list-enroll')
+    // var modal = document.getElementById('myModal');
+    // var modal1 = document.getElementById('Modal');
+    // var btn = $('.signup-button' );
+    // var span = document.getElementsByClassName('close');
+    // var btn2 = $('.nav-section-list-signup')
+    // var enrollModal = $('.enrollModal')
+    // var btn3 = $('.nav-section-list-enroll')
 
     // var modal = $('myModal');
     // var btn = $('signup-button');
@@ -138,50 +138,50 @@ hamburger.click(function (){
     //     console.log("fdsf")
     //     modal.style.display = "block";
     // };
-    btn.add(btn2).on('click', function(e){
-        e.preventDefault();
-        modal.style.display = "block";
-            $.ajax({
-                url: 'login',
-                method: 'get',
-                dataType: 'html'
-            }).done(function(data){
-                $('.top-modal').html(data);
-            })
-    });
+    // btn.add(btn2).on('click', function(e){
+    //     e.preventDefault();
+    //     modal.style.display = "block";
+    //         $.ajax({
+    //             url: 'login',
+    //             method: 'get',
+    //             dataType: 'html'
+    //         }).done(function(data){
+    //             $('.top-modal').html(data);
+    //         })
+    // });
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    };
+    // span.onclick = function() {
+    //     modal.style.display = "none";
+    // };
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
+    // window.onclick = function(event) {
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //     }
+    // };
   
-    btn3.on('click', function(e){
-        e.preventDefault();
-        modal1.style.display = "block";
-        $.ajax({
-            url: '/users/new',
-            method: 'get',
-            dataType: 'html'
-        }).done(function(data){
-            $('.top-modal').html(data);
-        })
-    });
+    // btn3.on('click', function(e){
+    //     e.preventDefault();
+    //     modal1.style.display = "block";
+    //     $.ajax({
+    //         url: '/users/new',
+    //         method: 'get',
+    //         dataType: 'html'
+    //     }).done(function(data){
+    //         $('.top-modal').html(data);
+    //     })
+    // });
 
-    span.onclick = function() {
-        console.log("fsd")
-        modal1.style.display = "none";
-    };
+    // span.onclick = function() {
+    //     console.log("fsd")
+    //     modal1.style.display = "none";
+    // };
 
-    window.onclick = function(event) {
-        if (event.target == modal1) {
-            modal1.style.display = "none";
-        }
-    };
+    // window.onclick = function(event) {
+    //     if (event.target == modal1) {
+    //         modal1.style.display = "none";
+    //     }
+    // };
 
     // btn.click(function(){
     //     modal.css({"display": "block"});
