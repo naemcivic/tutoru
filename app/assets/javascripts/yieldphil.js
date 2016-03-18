@@ -1,10 +1,10 @@
   //   <nav id="application-nav-bar">
 
-  //     <% if logged_in? && current_page?(users_path) %>
-  //       <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
-  //       <%= link_to "My Profile", current_user %></ br>
-  //       <%= link_to "Logout", :logout, method: :post %></ br>
-  //     <% end %>
+      // <% if logged_in? && current_page?(users_path) %>
+      //   <p>Logged in as <em><%= current_user.name.capitalize %></em></p>
+      //   <%= link_to "My Profile", current_user %></ br>
+      //   <%= link_to "Logout", :logout, method: :post %></ br>
+      // <% end %>
 
   //     <% if logged_in? && current_page?(users_path) == false %>
   //       <%= link_to "Logout", :logout, method: :post %></ br>

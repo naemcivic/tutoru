@@ -19,6 +19,28 @@ a:hover {
 body {
 }
 
+.dynamic-login {
+	font-size: 11px;
+	margin-left: -13px;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+}
+
+.dynamic-profile {
+	font-size: 11px;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	margin-left: 15px;
+	margin-right: 10px;
+}
+
+.dynamic-logout {
+	font-size: 11px;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+}
+
+
 input[name="email"], input[name="password"], input[name="search"],
 input[name="user[name]"], input[name="user[email]"], input[name="user[password]"],
 input[name="user[password_confirmation]"] {
