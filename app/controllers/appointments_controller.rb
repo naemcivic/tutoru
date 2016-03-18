@@ -7,7 +7,8 @@ class AppointmentsController < ApplicationController
     tutorid = @appointment.tutor_id
     tutor = User.find(tutorid)
     respond_to do |format|
-      if @appointment.save
+      if @appointment.available?(tutor)
+          @appointment.save
         format.html {redirect_to users_path, notice: 'Appointment made'}
         format.js {}
       else
