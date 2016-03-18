@@ -90,8 +90,9 @@
 
 <% end %>
   <!-- ###### Display Student's appointment in their profile section -->
-<% if current_user.student? == false %>
-  <h2>You have <%= pluralize(@user.student_appointments.count, 'appointment') %></h2>
+<% if current_user.student? == false && params[:id] == current_user.id.to_s%>
+
+  <h2> <%= @user.name %> You have <%= pluralize(@user.student_appointments.count, 'appointment') %></h2>
     <% @user.student_appointments.each do |student_appointment| %>
       <% if student_appointment.valid? %>
         <%= image_tag User.find(student_appointment.tutor_id).profile.avatar.url(:thumb) %>
@@ -105,7 +106,5 @@
 <% end %>
 
 </div>
-
-
 
 <% end %>
