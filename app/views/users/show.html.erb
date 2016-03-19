@@ -57,7 +57,7 @@
         <%= pluralize(@user.get_downvotes.size,"downvote") %>
       <% end %>
     </div>
-
+    <%= instant_hangout widget_size: 200 %>
 
 <% elsif %>
 
@@ -98,7 +98,7 @@
         <%= image_tag User.find(student_appointment.tutor_id).profile.avatar.url(:thumb) %>
       <ul>
         <li>Tutor name: <%= (User.find(student_appointment.tutor_id).name) %></li>
-        <li>Appointment Date: <%= student_appointment.appointment_date%></li>
+        <li>Appointment Date: <%= student_appointment.date_of_appointment%></li>
         <li>Subject: <%= User.find(student_appointment.tutor_id).profile.category%></li></br>
       </ul>
     <% end %>

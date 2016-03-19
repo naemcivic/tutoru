@@ -20,6 +20,7 @@ gem 'jquery-ui-rails'
 gem 'neat', '~> 1.7', '>= 1.7.4'
 gem 'multi-dates-picker-rails'
 gem 'delayed_job_active_record'
+gem "google-instant-hangouts" 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

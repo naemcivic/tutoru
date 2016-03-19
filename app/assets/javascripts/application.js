@@ -15,6 +15,6 @@
 //= require jquery-ui
 //= require 'greensock/TweenMax'
 //= require 'greensock/jquery.gsap.js'
-
+//= require google-instant-hangouts
 //= require turbolinks
 //= require_tree .
