@@ -19,6 +19,70 @@ a:hover {
 body {
 }
 
+/*.spacer {
+	width: 100%;
+	height: 80px;
+}*/
+
+.avatar {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.tutorli {
+	font-size: 12px;
+	margin-bottom: 14px;
+	font-family: 'Nunito';
+	font-weight: 300;
+}
+
+#tutorlist {
+	margin: 0 auto;
+	width: 60%;
+/*	margin-right: 100px;*/
+	padding-top: 80px;
+}
+
+.grey {
+	background-color: #F3F3F3;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+}
+
+.grey:nth-child(odd) {
+	background-color: #E6E5E5;
+}
+
+.thumbnail-holder {
+	float: left;
+	width: 130px;
+	height: 130px;
+	margin-right: 22px;
+}
+
+.tutorbook {
+	font-family: 'Montserrat';
+	font-size: 10px;
+	text-transform: uppercase;
+	border: 1px solid black;
+	padding: 0 4px;
+	display: inline;
+}
+
+.tutorbook {
+/*	background-color: black;
+	color: white !important;*/
+}
+
+.votestyle {
+	font-size: 12px;
+	font-family: 'Nunito';
+	font-weight: 300;
+	margin-top: 16px;
+}
+
 .dynamic-login {
 	font-size: 11px;
 	margin-left: -13px;
