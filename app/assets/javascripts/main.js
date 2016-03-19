@@ -159,7 +159,7 @@ hamburger.click(function (){
     //         modal.style.display = "none";
     //     }
     // };
-  
+
     // btn3.on('click', function(e){
     //     e.preventDefault();
     //     modal1.style.display = "block";
