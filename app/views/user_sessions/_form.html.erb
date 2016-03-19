@@ -1,3 +1,6 @@
+<div class="signup-form-container">
+<h2 class="enroll-form">Sign In</h2>
+
 <%= form_tag user_sessions_path, :method => :post do %>
   <div class="field">
     <%= label_tag :email %><br />
@@ -11,3 +14,8 @@
     <%= submit_tag "Login", class: 'login'  %>
   </div>
 <% end %>
+  <p class="signup-form-nav">
+  <%= link_to 'Home', users_path, class: 'dynamic-profile1' %>
+  <%= link_to 'Become a Tutor', new_user_path(tutor: true), class: 'dynamic-profile' %>
+  </p>
+</div>

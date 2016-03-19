@@ -16,7 +16,7 @@
         </ul>
       <% if logged_in? && current_user.student? == false %>
         <li  class="tutorbook"><%= link_to "Book Appointment", tutor.user, 'data-no-turbolink' => true %>></li></br>
-      </div>
       <% end %>
+      </div>
     <% end %>
   </ul>

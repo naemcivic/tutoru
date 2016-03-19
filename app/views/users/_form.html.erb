@@ -1,3 +1,5 @@
+<div class="signup-form-container">
+  <h2 class="enroll-form">Enroll</h2>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -21,7 +23,6 @@
       <%= f.email_field :email %>
   </div>
 
-
   <div class="field">
      <%= f.label :password %><br />
      <%= f.password_field :password %>
@@ -29,6 +30,8 @@
   <div class="field">
      <%= f.label :password_confirmation %><br />
      <%= f.password_field :password_confirmation %>
+
+
   </div>
   <div class="field">
      <%= f.hidden_field :student, :value => true %>
@@ -38,5 +41,10 @@
   </div>
 
   <% end %>
-
+  <p class="signup-form-nav">
+  <%= link_to 'Sign In', :login, class: 'dynamic-profile1' %> 
+  <%= link_to 'Home', users_path, class: 'dynamic-profile' %>
+  <%= link_to 'Become a Tutor', new_user_path(tutor: true), class: 'dynamic-profile' %>
+  </p>
+</div>
   
