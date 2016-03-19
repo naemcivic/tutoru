@@ -15,7 +15,7 @@
         <li><%= pluralize(tutor.display_downvote,"downvote") %></li></br>
         </ul>
       <% if logged_in? && current_user.student? == false %>
-        <li  class="tutorbook"><%= link_to "Book Appointment", tutor.user %>></li></br>
+        <li  class="tutorbook"><%= link_to "Book Appointment", tutor.user, 'data-no-turbolink' => true %>></li></br>
       </div>
       <% end %>
     <% end %>
