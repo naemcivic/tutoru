@@ -17,6 +17,51 @@ a:hover {
 }
 
 body {
+
+}
+
+.signup-form-nav {
+	margin-top: 20px;
+	font-size: 11px;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+}
+
+.headline {
+	font-family: 'Nunito';
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.enroll-form {
+	font-size: 20px;
+	font-family: 'Nunito';
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin-bottom: 24px;
+	text-align: center;
+	transform: translate(-10%, 0%);
+/*	margin-top: 30px;*/
+}
+
+
+.signup-form-container {
+	width: 50%;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 52.5%;
+	transform: translate(-50%, -80%);
+}
+
+.signup-form-container1 {
+	width: 50%;
+	margin: 0 auto;
+	padding-top: 30px;
+/*	position: absolute;*/
+/*	top: 50%;
+	left: 50%;*/
+	transform: translate(10%, 0%);
 }
 
 /*.spacer {
@@ -98,6 +143,14 @@ body {
 	margin-right: 10px;
 }
 
+.dynamic-profile {
+	font-size: 11px;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+/*	margin-left: 15px;*/
+	margin-right: 10px;
+}
+
 .dynamic-logout {
 	font-size: 11px;
 	font-family: 'Montserrat';
@@ -107,12 +160,34 @@ body {
 
 input[name="email"], input[name="password"], input[name="search"],
 input[name="user[name]"], input[name="user[email]"], input[name="user[password]"],
-input[name="user[password_confirmation]"] {
+input[name="user[password_confirmation]"], input[name="user[profile_attributes][category]"] {
 	width: 80%;
 	height: 30px;
 	font-size: 18px;
 	font-family: 'Nunito';
 	font-weight: 300;
+	outline: none;
+}
+
+input[name="user[profile_attributes][availability]"] {
+	height: 30px;
+	margin-bottom: 10px;
+	outline: none;
+}
+
+#user_profile_attributes_qualification, #user_profile_attributes_location {
+	width: 50%;
+	height: 40px;
+	outline: none;
+}
+
+#user_profile_attributes_avatar {
+	border: 1px solid #ECECEC;
+	background-color: white;
+	font-size: 10px;
+	font-family: 'Nunito';
+	font-weight: 300;
+
 }
 
 input[value="Create User"] {
@@ -126,6 +201,8 @@ input[value="Create User"] {
 	width: 81.5%;
 	height: 35px;
 	margin-top: 13px;
+	cursor: pointer;
+	outline: none;
 }
 
 .display-inline {
@@ -165,12 +242,12 @@ input[value="Create User"] {
 	background-color: #2395E8;
 }
 
-#search-form-submit:active {
+#search-form-submit:active, .login:active, input[value="Create User"]:active {
 	-webkit-transform: scale 0.3s ease-out;
 	-moz-transform: scale 0.3s ease-out;
 	-o-transform: scale 0.3s ease-out;
 	transform: scale 0.3s ease-out;
-	transform: scale(0.9);
+	transform: scale(0.95);
 }
 
 #search-form-submit:focus {
@@ -198,6 +275,8 @@ input[value="Create User"] {
 	-webkit-appearance: none;
 	width: 81.5%;
 	height: 35px;
+	cursor: pointer;
+	outline: none;
 }
 
 .login:hover, input[value="Create User"]:hover {
@@ -211,6 +290,7 @@ input[value="Create User"] {
 	font-weight: 300;
 	margin-top: 8px;
 	margin-bottom: 8px;
+
 }
 
 .search {
@@ -400,6 +480,13 @@ color: #222222;
 	font-weight: 300;
 	line-height: 25px;
 	font-size: 15px;
+}
+
+#error_explanation {
+	font-family: 'Nunito';
+	font-weight: 300;
+	font-size: 12px;
+	color: red;
 }
 
 .content-container {

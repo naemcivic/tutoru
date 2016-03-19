@@ -1,3 +1,6 @@
+<div class="signup-form-container1">
+<h2 class='enroll-form'>Become a Tutor</h2>
+<h3 class="headline">Fill out Profile Below</h3>
 <%= form_for(@user, html: { multiport: true }) do |f| %>
 
   <% if @user.errors.any? %>
@@ -35,37 +38,39 @@
      <%= f.hidden_field :student, :value => false %>
   </div>
 
-  <h2>Profile</h2>
   <div id="profile">
     <%= f.fields_for :profile do |profile_fields| %>
 
   <div class="field">
-    <%= profile_fields.label :category %>
+    <%= profile_fields.label :category %><br/>
     <%= profile_fields.text_field :category %>
   </div>
 
+
   <div class="field">
-    <%= profile_fields.label :qualification %>
+    <%= profile_fields.label :availability %><br/>
+    <%= profile_fields.datetime_local_field :availability %>
+  </div>
+
+  <div class="field">
+    <%= profile_fields.label :qualifications %><br/>
     <%= profile_fields.text_area :qualification %>
   </div>
 
   <div class="field">
-    <%= profile_fields.label :location %>
+    <%= profile_fields.label :location %><br/>
     <%= profile_fields.text_area :location %>
-  </div>
-
-  <div class="field">
-    <%= profile_fields.label :availability %>
-    <%= profile_fields.datetime_local_field :availability %>
   </div>
 
   <div class="field">
      <%= profile_fields.hidden_field :avatar_cache %>
   </div>
 
+  <h2 class="headline">Upload a photo so a student can see you</h2>
   <div class="field">
     <%= profile_fields.file_field :avatar %>
   </div>
+
 
   </div>
 
@@ -77,4 +82,9 @@
   </div>
 
   <% end %>
-  <%= link_to 'Home', users_path %>
+    <p class="signup-form-nav">
+  <%= link_to 'Sign In', :login, class: 'dynamic-profile1' %> 
+  <%= link_to 'Home', users_path, class: 'dynamic-profile' %>
+  </p>
+
+</div>
