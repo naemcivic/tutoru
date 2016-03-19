@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317161148) do
+ActiveRecord::Schema.define(version: 20160319143528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,12 +67,13 @@ ActiveRecord::Schema.define(version: 20160317161148) do
     t.string   "category"
     t.string   "location"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "avatar"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "availability"
+    t.datetime "videoconfavailability"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
