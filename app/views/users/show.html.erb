@@ -56,7 +56,10 @@
         <%= pluralize(@user.get_downvotes.size,"downvote") %>
       <% end %>
     </div>
+  <% if @user.available_to_video_conf %>
   <%= instant_hangout topic: 'My Hangout' %>
+  <% end %>
+
   <!-- #helper method for google hangout -->
 <% elsif %>
 

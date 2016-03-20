@@ -46,12 +46,6 @@
     <%= profile_fields.text_field :category %>
   </div>
 
-
-  <div class="field">
-    <%= profile_fields.label :availability %><br/>
-    <%= profile_fields.datetime_local_field :availability %>
-  </div>
-
   <div class="field">
     <%= profile_fields.label :qualifications %><br/>
     <%= profile_fields.text_area :qualification %>
@@ -63,14 +57,15 @@
   </div>
 
   <div class="field">
+    <%= profile_fields.label :Video_conference_availability %>
+    <%= profile_fields.datetime_local_field :videoconfavailability %>
+  </div>
+
+  <div class="field">
     <%= profile_fields.label :location %><br/>
     <%= profile_fields.text_area :location %>
   </div>
 
-  <div class="field">
-    <%= profile_fields.label :Video_conference_availability %>
-    <%= profile_fields.datetime_local_field :videoconfavailability %>
-  </div>
 
   <div class="field">
      <%= profile_fields.hidden_field :avatar_cache %>
@@ -93,7 +88,7 @@
 
   <% end %>
     <p class="signup-form-nav">
-  <%= link_to 'Sign In', :login, class: 'dynamic-profile1' %> 
+  <%= link_to 'Sign In', :login, class: 'dynamic-profile1' %>
   <%= link_to 'Home', users_path, class: 'dynamic-profile' %>
   </p>
 

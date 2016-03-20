@@ -33,6 +33,15 @@ class User < ActiveRecord::Base
     self.created_at.strftime('%^b %d %Y')
   end
 
+  #display logic for video conference
+  def available_to_video_conf
+    if self.profile.videoconfavailability != nil
+      self.profile.videoconfavailability.wday == Date.today.wday && self.profile.videoconfavailability.time >= Time.now + (60*60)
+        true
+      else
+        false
+      end
+  end
 
 
 end
