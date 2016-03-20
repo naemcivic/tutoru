@@ -13,8 +13,14 @@
 
       <div class="field">
         <%= f.label :availability %><br />
-        <%= f.text_field :availability %>
+        <%= f.datetime_local_field :availability %>
       </div>
+
+      <div class="field">
+        <%= f.label :Video_conference_availability %><br />
+        <%= f.datetime_local_field :videoconfavailability %>
+      </div>
+
       <div class="actions">
         <%= f.submit "update availability"%>
       </div>
