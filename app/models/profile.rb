@@ -9,6 +9,11 @@ class Profile < ActiveRecord::Base
     self.availability.strftime('%A %b %d, %Y %I:%M %P')
   end
 
+
+  def video_availability
+    self.videoconfavailability.strftime('%A %b %d, %Y %I:%M %P')
+  end
+
   #a method to show the tutor's distance in KMs
   def convert_km
     (distance * 1.61).round(2)

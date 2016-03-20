@@ -35,11 +35,14 @@ class User < ActiveRecord::Base
 
   #display logic for video conference
   def available_to_video_conf
-    if self.profile.videoconfavailability != nil
-    (self.profile.videoconfavailability.time <= (Time.now + (60*60))) && (self.profile.videoconfavailability.time < Time.now) == true
-      else
-        false
-      end
+      self.profile.videoconfavailability != nil
+      starttime = self.profile.videoconfavailability.time.to_f
+      endtime = (starttime + (60*60)).to_f
+      duration = (Time.now - starttime)
+      time = Time.now
+
+      starttime <= time.to_f && endtime >= starttime && self.profile.videoconfavailability.time.day == time.day
+
   end
 
 
