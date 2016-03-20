@@ -1,5 +1,5 @@
-            <% if logged_in? && current_page?(users_path) %>
-        <p class="dynamic-login">Welcome <em><%= current_user.name.capitalize %></em>!</p>
-        <%= link_to "Profile", current_user, class: 'dynamic-profile' %></ br>
-        <%= link_to "Logout", :logout, method: :post, class: 'dynamic-logout' %></ br>
-      <% end %>
+  <% if logged_in? && current_page?(users_path) %>
+    <p class="dynamic-login">Welcome <em><%= current_user.name.capitalize %></em>!</p>
+    <%= link_to "Profile", current_user, class: 'dynamic-profile' %></ br>
+    <%= link_to "Logout", :logout, method: :post, class: 'dynamic-logout' %></ br>
+  <% end %>

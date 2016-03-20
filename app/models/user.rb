@@ -41,7 +41,11 @@ class User < ActiveRecord::Base
       duration = (Time.now - starttime)
       time = Time.now
 
-      starttime <= time.to_f && endtime >= starttime && self.profile.videoconfavailability.time.day == time.day
+    if starttime <= time.to_f && endtime >= starttime && self.profile.videoconfavailability.day == Date.today.day
+      true
+    else
+      false
+    end
 
   end
 
