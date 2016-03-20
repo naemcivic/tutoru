@@ -18,7 +18,9 @@ gem 'jquery-rails'
 gem 'greensock-rails'
 gem 'jquery-ui-rails'
 gem 'neat', '~> 1.7', '>= 1.7.4'
+#ActiveRecord DelayedJob
 gem 'delayed_job_active_record'
+#Google Hang Out API
 gem "google-instant-hangouts"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -26,16 +28,22 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+#File uploader
 gem 'carrierwave'
+#CDN solution for storage
 gem 'cloudinary'
+#image processing
 gem 'mini_magick'
+#upvote downvote
 gem 'acts_as_votable', '~> 0.10.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # sorcery gem for user authentication
 gem 'sorcery'
+#geocoding location
 gem 'geocoder'
+#Env and secrets 
 gem 'figaro'
 # Use Unicorn as the app server
 # gem 'unicorn'
