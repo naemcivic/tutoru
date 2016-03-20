@@ -35,13 +35,12 @@ class User < ActiveRecord::Base
 
   #display logic for video conference
   def available_to_video_conf(date: Date.today, minimum_notice: 1.hour)
-
-      starttime = self.profile.videoconfavailability.to_datetime
-      datetimenow = Time.now.to_datetime
-      self.profile.videoconfavailability != nil
-
-  (starttime < datetimenow) && (self.profile.videoconfavailability.wday == date.wday) && (self.profile.videoconfavailability <= minimum_notice.from_now) && (starttime > 1.hour.ago)
-
+      if self.profile.videoconfavailability != nil
+        starttime = self.profile.videoconfavailability.to_datetime
+        datetimenow = Time.now.to_datetime
+        self.profile.videoconfavailability != nil
+        (starttime < datetimenow) && (self.profile.videoconfavailability.wday == date.wday) && (self.profile.videoconfavailability <= minimum_notice.from_now) && (starttime > 1.hour.ago)
+      end
   end
 
 end

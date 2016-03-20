@@ -13,7 +13,9 @@
         <li>Availability: <%= @user.profile.tutor_availability %></li>
         <li>Qualification: <%= @user.profile.qualification %></li>
         <li>Location: <%= @user.profile.location %></li>
+        <% if @user.profile.videoconfavailability != nil %>
         <li>Video Conference availability: <%= @user.profile.video_availability %></li>
+        <% end %>
       </ul>
 
     <!-- #####This is a map div. It displays the location of the tutor -->
