@@ -35,9 +35,10 @@
 		    <%= form_tag users_path, method: :get, authentication: false, id: "search-form" do %>
 		      <%= text_field_tag :search, params[:search] %>
 		      <%= submit_tag "Search", id:"search-form-submit"%></br>
-		    <% end %>
-          <%= link_to "Need help urgently?", user_profiles_url("1"), id:"search-form-submit", :remote => true  %>
+        <%= link_to "Need help urgently?", user_profiles_url("1"), id:"search-form-submit", class: 'video', :remote => true  %>
+        <% end %>
         </div>
+
     <!--    <p class="logo">Tutor U</p>
         <ul class="nav-menu">
           <li>About</li>
