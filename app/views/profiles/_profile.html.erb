@@ -3,6 +3,9 @@
       <span class="thumbnail-holder">
       <%= image_tag profile.avatar.url(:thumb), class: 'avatar' %>
       </span>
+      <% if @suggest.present? %>
+        <h1>There are currently no tutors available for video conferencing, these are the up coming tutors available for video conference at a later time</h1></br>
+      <% end %>
       <li class="tutorli">Tutor's name: <%= profile.user.name %></li>
       <li class="tutorli">Tutor's availability: <%= profile.availability %></li>
       <li class="tutorli">Area of expertise: <%= profile.category %></li>
@@ -11,7 +14,7 @@
       <li><%= pluralize(profile.display_upvote,"upvote") %></li>
       <li><%= pluralize(profile.display_downvote,"downvote") %></li></br>
       </ul>
-    <% if logged_in? && current_user.student? == false %>
+    <% if logged_in? && current_user.student? == false && @profiles.present? %>
       <h1>Tutor is available to have a video session now!</h1>
       <li  class="tutorbook"><%= link_to "Check out the tutor", profile.user, 'data-no-turbolink' => true %></li></br>
     <% end %>
