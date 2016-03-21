@@ -39,7 +39,32 @@
 
         <h3 class="headline3">Availability: <%= @user.profile.tutor_availability %></h3>
 
+        <h4 class="headline2">Make an appointment</h4>
+          <h2 id="appointment-made"></h2>
+          <%= form_for [@user, @appointment], :remote => true do |f| %>
+            <div id="appointment_errors">
+                <%= render :partial => "/users/appointment_form_errors" %>
+            </div>
+            <div class="field">
+           <!--    <%= f.label :appointment_date %><br /> -->
+              <%= f.datetime_local_field :appointment_date %>
+            </div>
+            <div class="field">
+               <%= f.hidden_field :tutor_id, :value => params[:id] %>
+            </div>
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          <% end %>
 
+    <div id="upvote">
+      <%= link_to like_user_path(@user), class: "like", method: :put do %>
+        <button type="button" id="like">
+          Upvote
+        </button>
+        <%= pluralize(@user.get_upvotes.size,"upvote") %>
+      <% end %>
+    </div>
 
     <div id="downvote">
       <%= link_to unlike_user_path(@user) , class: "like", method: :put do %>
@@ -53,51 +78,7 @@
   <%= instant_hangout topic: 'My Hangout' %>
   <% end %>
 
-  <!-- #helper method for google hangout -->
 <% elsif %>
-      <!-- #####This is a map div. It displays the location of the tutor -->
-
-      <!-- #Appointment form for students to book a tutor for appointment -->
-      <h4 class="headline2">Make an appointment</h4>
-        <h2 id="appointment-made"></h2>
-        <%= form_for [@user, @appointment], :remote => true do |f| %>
-          <div id="appointment_errors">
-              <%= render :partial => "/users/appointment_form_errors" %>
-          </div>
-          <div class="field">
-         <!--    <%= f.label :appointment_date %><br /> -->
-            <%= f.datetime_local_field :appointment_date %>
-          </div>
-          <div class="field">
-             <%= f.hidden_field :tutor_id, :value => params[:id] %>
-          </div>
-          <div class="actions">
-            <%= f.submit %>
-          </div>
-        <% end %>
-
-      <!-- ##### Tutor UpVote DownVote system for the students -->
-      <div id="upvote">
-        <%= link_to like_user_path(@user), class: "like", method: :put do %>
-          <button type="button" id="like">
-            Upvote
-          </button>
-          <%= pluralize(@user.get_upvotes.size,"upvote") %>
-        <% end %>
-      </div>
-
-      <div id="downvote">
-        <%= link_to unlike_user_path(@user) , class: "like", method: :put do %>
-          <button type="button" id="downvote-button">
-            Downvote
-          </button>
-          <%= pluralize(@user.get_downvotes.size,"downvote") %>
-        <% end %>
-      </div>
-      <%= instant_hangout widget_size: 200 %>
-
-  <% elsif %>
-
     <!-- ##### Display Tutor's OWN profile -->
     <div class="user-profile">
       <% if current_user.student? && current_user.id == @user.id %>
