@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.where("videoconfavailability <= ? AND videoconfavailability >= ?", Time.now + 1.hour , Time.now - 1.hour )
+    @suggest = Profile.where(:videoconfavailability =>  Time.now..Time.now.end_of_day)
       respond_to do |format|
         format.html{}
         format.js{}

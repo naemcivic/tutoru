@@ -1,9 +1,7 @@
-  <!-- #######this will show the Tutor's profile for student ONLY -->
-
+ <!-- #######this will show the Tutor's profile for student ONLY -->
 <div class="show-container">
   <div class="bc-show-intro-container"></div>
   <!-- this will show the Tutor's profile for student ONLY -->
-
 <% if @user.student? && current_user.student? == false%>
   <div id="map">
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['google_maps_api_key']}&callback=initMap", async: true, defer: true, id: 'map' %>
@@ -20,11 +18,9 @@
         </div>
       </div>
     </div>
-
   <div class="main-tutor-container">
   <div class="overlay1">
   <div class="main-contain">
-
         <h3 class="headline-top">Tutoring Since</h3>
         <p class='e-q'><%= "#{@user.name}" %> has been a trusted tutor since <%= @user.member_since %>.</p>
         <h3 class="headline1">Expertise and Qualifications</h3>
@@ -33,12 +29,9 @@
           <li class='e-q'><%= @user.profile.qualification %></li>
         </ul>
         <h3 class='headline2'><%= @user.profile.location %></h3>
-
         <div id="show-map" data-latitude="<%= @user.profile.latitude %>" data-longitude="<%= @user.profile.longitude %>">
         </div>
-
         <h3 class="headline3">Availability: <%= @user.profile.tutor_availability %></h3>
-
         <h4 class="headline2">Make an appointment</h4>
           <h2 id="appointment-made"></h2>
           <%= form_for [@user, @appointment], :remote => true do |f| %>
@@ -56,7 +49,6 @@
               <%= f.submit %>
             </div>
           <% end %>
-
     <div id="upvote">
       <%= link_to like_user_path(@user), class: "like", method: :put do %>
         <button type="button" id="like">
@@ -65,7 +57,6 @@
         <%= pluralize(@user.get_upvotes.size,"upvote") %>
       <% end %>
     </div>
-
     <div id="downvote">
       <%= link_to unlike_user_path(@user) , class: "like", method: :put do %>
         <button type="button" id="downvote-button">
@@ -77,7 +68,6 @@
   <% if @user.available_to_video_conf %>
   <%= instant_hangout topic: 'My Hangout' %>
   <% end %>
-
 <% elsif %>
     <!-- ##### Display Tutor's OWN profile -->
     <div class="user-profile">
@@ -95,7 +85,6 @@
         <% end %>
         </ul>
     <% else %>
-
     <!-- #### Display Tutor's info to other Tutor's on the site -->
     <% if current_user.student? && current_user.id != @user.id %>
     <h1><%= "Tutor #{@user.name}'s Profile"%></h1>
@@ -105,11 +94,9 @@
         <li>Area of expertise: <%= @user.profile.category %></li>
       </ul>
       <% end %>
-
   <% end %>
     <!-- ###### Display Student's appointment in their profile section -->
   <% if current_user.student? == false && params[:id] == current_user.id.to_s%>
-
     <h2> <%= @user.name %> You have <%= pluralize(@user.student_appointments.count, 'appointment') %></h2>
       <% @user.student_appointments.each do |student_appointment| %>
         <% if student_appointment.valid? %>
@@ -122,9 +109,7 @@
       <% end %>
     <% end %>
   <% end %>
-
   </div>
-
 <% end %>
 </div>
 </div>

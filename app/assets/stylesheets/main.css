@@ -437,6 +437,13 @@ input[name="commit"]:hover {
 	text-align: center;
 }
 
+.video {
+	position: absolute;
+	top: 120%;
+	left: 37%;
+	transform: translate(-4%, 14%);
+}
+
 #search-form-submit:hover {
 	-webkit-transition: background-color 0.3s ease-out;
 	-moz-transition: background-color 0.3s ease-out;
@@ -992,12 +999,12 @@ font-size: 14px;
       left: 38%;
    }
 
-}*/
+}
 
 
 
 
-/*@media only screen and (max-width: 567px) {
+@media only screen and (max-width: 567px) {
    .table3 {
       font-size: 10px;
       transform: translate(0, -18px);
@@ -1116,9 +1123,9 @@ font-size: 14px;
       margin-right: 40px;
    }
 
-}
+}*/
 
-
+/*
 @media only screen and (max-width: 1100px) {
       .action-statement {
       margin-left: -132px;
@@ -1147,6 +1154,153 @@ font-size: 14px;
    }
 
 @media only screen and (min-width: 320px) {
+
+
+   .h {
+      font-size: 20px;
+   }
+
+   .layout {
+      font-size: 11px;
+   }
+
+   .txthousing-one {
+      transform: translate(0,0);
+   }
+
+   .imghousing-two {
+      margin-right: 40px;
+   }
+
+   .imghousing-three {
+      margin-left: 30px;
+   }
+
+    .table3 {
+      font-size: 10px;
+      transform: translate(0, -18px);
+      display: block;
+      margin: 0 auto;
+      width: 93%;
+      color: black;
+   }
+
+   .table2 {
+      display: block;
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 17px;
+   }
+
+   .table1 {
+      padding-top: 0px;
+   }
+
+	.signup-button {
+		font-size: 11px;
+		margin-left: 0px;
+		width: 85px;
+	}
+
+	.logo-bottom {
+		left: 30%;
+	}
+
+   .action-statement {
+      margin-left: -96px;
+      font-size: 11px;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.logo {
+		font-size: 13px;
+	}
+
+	.hat {
+		margin-left: -32px;
+		transform: scale(0.3);
+	}
+
+	.dynamic-login, .dynamic-profile, .dynamic-logout {
+		font-size: 8px;
+	}
+
+	.dynamic-login {
+		margin-left: -25px;
+		margin-top: -6px;
+	}
+
+	.dynamic-profile {
+		margin-left: 0px;
+/*		transform: translate(-73px,14px);*/
+		position: absolute;
+		top: 15%;
+		left: 26%;
+	}
+
+	.dynamic-logout {
+/*		transform: translate(-73px,14px);*/
+		position: absolute;
+		top: 15%;
+		left: 35%;
+	}
+
+	#hamburger-closer {
+		top: 20%;
+		right: 36%;
+	}
+
+	input[name="search"] {
+		height: 20px;
+		width: 190px;
+		margin-left: 27px;
+	}
+
+	#search-form-submit {
+		transform: translateX(-21px) scale(0.6) translateY(-1px);
+		border-radius: 0px;
+	}
+
+	.search {
+		width: 100%;
+	}
+
+	.video {
+		left: 31%;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.blackcontent {
+		height: 20vh;
+		background-size: 100px;
+	}
+
+
+
+
+
+
+
+
+
+
+
 	.tutors-photo {
 		height: 150px;
 		width: 150px;
