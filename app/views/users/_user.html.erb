@@ -3,7 +3,7 @@
     <% @users.each do |tutor| %>
       <div class="grey">
         <span class="thumbnail-holder">
-        <%= image_tag tutor.avatar.url(:thumb), class: 'avatar' %>
+        <%= image_tag tutor.avatar.url, class: 'avatar img-layout' %>
         </span>
         <li class="tutorli">Tutor's name: <%= tutor.user.name %></li>
         <li class="tutorli">Tutor's availability: <%= tutor.availability %></li>
