@@ -1,10 +1,9 @@
-<<<<<<< HEAD
   <!-- #######this will show the Tutor's profile for student ONLY -->
-=======
+
 <div class="show-container">
   <div class="bc-show-intro-container"></div>
   <!-- this will show the Tutor's profile for student ONLY -->
->>>>>>> front
+
 <% if @user.student? && current_user.student? == false%>
   <div id="map">
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['google_maps_api_key']}&callback=initMap", async: true, defer: true, id: 'map' %>
@@ -22,21 +21,7 @@
       </div>
     </div>
 
-      <ul>
-        <li>Tutor's name: <%= @user.name %></li>
-        <li>Tutor's email: <%= @user.email %></li>
-        <li>A trusted tutor since <%= @user.member_since %></li>
-        <li>Area of expertise: <%= @user.profile.category %></li>
-        <li>Availability: <%= @user.profile.tutor_availability %></li>
-        <li>Qualification: <%= @user.profile.qualification %></li>
-        <li>Location: <%= @user.profile.location %></li>
-        <% if @user.profile.videoconfavailability != nil %>
-        <li>Video Conference availability: <%= @user.profile.video_availability %></li>
-        <% end %>
-      </ul> 
-
-
-<div class="main-tutor-container">
+  <div class="main-tutor-container">
   <div class="overlay1">
   <div class="main-contain">
 
