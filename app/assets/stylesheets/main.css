@@ -1155,26 +1155,74 @@ font-size: 14px;
 
 @media only screen and (min-width: 320px) {
 
+	.first-section {
+		width: 80%;
+		margin-top: 70px;
+		height: 35vh;
+	}
 
-   .h {
-      font-size: 20px;
+	.imghousing-one {
+		height: 150px;
+		margin-left: 24px;
+	}
+
+	.h {
+      font-size: 14px;
    }
 
    .layout {
-      font-size: 11px;
+      font-size: 9px;
+   }
+
+   .second-section {
+   	margin-top: 0px;
+   	width: 89%;
+   	height: 35vh;
+   }
+
+   .imghousing-two {
+   	height: 170px;
+   	margin-right: 18px;
+   	width: 45%;
+   }
+
+   .txthousing-two {
+      transform: translate(0,0);
+   }
+
+   .third-section {
+   	margin-top: 5px;
+   	width: 80%;
+   	padding-right: 0px;
+   }
+
+   .imghousing-three {
+      margin-left: 30px;
+      height: 200px;
+   }
+
+   .fourth-section {
+   	width: 89%;
+   	padding-left: 0px;
+   	margin-top: 20px;
+   	height: 20vh;
+   }
+
+   .imghousing-four {
+   	height: 200px;
+   	margin-right: 35px;
+   	width: 45%;
+   	margin-top: 0px;
+   }
+
+   .txthousing-four {
+   	transform: translate(0,36px);
    }
 
    .txthousing-one {
       transform: translate(0,0);
    }
 
-   .imghousing-two {
-      margin-right: 40px;
-   }
-
-   .imghousing-three {
-      margin-left: 30px;
-   }
 
     .table3 {
       font-size: 10px;
@@ -1248,19 +1296,19 @@ font-size: 14px;
 /*		transform: translate(-73px,14px);*/
 		position: absolute;
 		top: 15%;
-		left: 26%;
+		left: 32%;
 	}
 
 	.dynamic-logout {
 /*		transform: translate(-73px,14px);*/
 		position: absolute;
 		top: 15%;
-		left: 35%;
+		left: 44%;
 	}
 
 	#hamburger-closer {
 		top: 20%;
-		right: 36%;
+		right: 20%;
 	}
 
 	input[name="search"] {
