@@ -1,6 +1,10 @@
+
   <div id="tutorlist">
-      <%= render 'user' %>
-    </div>
+    <% if @profiles %>
+     <%= instant_hangout topic: 'My Hangout' %>
+    <% end %>
+    <%= render 'user' %>
+  </div>
 
 <div class="clear">
     <div class="mobilenav">
@@ -33,9 +37,9 @@
 		     <h2 class="h2search">Search by subject</h2>
 		    <%= form_tag users_path, method: :get, authentication: false, id: "search-form" do %>
 		      <%= text_field_tag :search, params[:search] %>
-		      <%= submit_tag "Search", id:"search-form-submit"%>
+		      <%= submit_tag "Search", id:"search-form-submit"%></br>
 		    <% end %>
-          <%= button_tag "Need help urgently?", class: "online-tutors", id: "search-form-submit" %>
+          <%= link_to "Need help urgently?", user_profiles_url("1"), id:"search-form-submit", :remote => true  %>
         </div>
     <!--    <p class="logo">Tutor U</p>
         <ul class="nav-menu">

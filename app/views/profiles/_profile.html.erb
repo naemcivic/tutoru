@@ -1,0 +1,20 @@
+<ul id="alltutors">
+    <div class="grey">
+      <span class="thumbnail-holder">
+      <%= image_tag profile.avatar.url(:thumb), class: 'avatar' %>
+      </span>
+      <li class="tutorli">Tutor's name: <%= profile.user.name %></li>
+      <li class="tutorli">Tutor's availability: <%= profile.availability %></li>
+      <li class="tutorli">Area of expertise: <%= profile.category %></li>
+      <li class="tutorli">Tutor's Location: <%= profile.location %></li>
+      <ul class="votestyle">
+      <li><%= pluralize(profile.display_upvote,"upvote") %></li>
+      <li><%= pluralize(profile.display_downvote,"downvote") %></li></br>
+      </ul>
+    <% if logged_in? && current_user.student? == false %>
+      <h1>Tutor is available to have a video session now!</h1>
+      <li  class="tutorbook"><%= link_to "Check out the tutor", profile.user, 'data-no-turbolink' => true %></li></br>
+    <% end %>
+    </div>
+</ul>
+  <%= instant_hangout topic: 'My Hangout' %>

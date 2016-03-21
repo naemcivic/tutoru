@@ -1,4 +1,14 @@
 class ProfilesController < ApplicationController
+
+  def index
+    @profiles = Profile.where("videoconfavailability <= ? AND videoconfavailability >= ?", Time.now + 1.hour , Time.now - 1.hour )
+      respond_to do |format|
+        format.html{}
+        format.js{}
+      end
+  end
+
+
   def edit
     @profile = Profile.find(params[:id])
     @user = User.find(params[:user_id])
