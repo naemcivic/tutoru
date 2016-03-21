@@ -38,7 +38,6 @@ class User < ActiveRecord::Base
       if self.profile.videoconfavailability != nil
         starttime = self.profile.videoconfavailability.to_datetime
         datetimenow = Time.now.to_datetime
-        self.profile.videoconfavailability != nil
         (starttime < datetimenow) && (self.profile.videoconfavailability.wday == date.wday) && (self.profile.videoconfavailability <= minimum_notice.from_now) && (starttime > 1.hour.ago)
       end
   end

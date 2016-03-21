@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
 private
 
   def profile_params
-    params.require(:profile).permit(:user_id, :availability)
+    params.require(:profile).permit(:user_id, :availability,:videoconfavailability)
   end
 
 

@@ -2,7 +2,6 @@
       <%= render 'user' %>
     </div>
 
-
 <div class="clear">
     <div class="mobilenav">
       <ul class="list-menu">
@@ -16,7 +15,7 @@
     <div class="fixednav">
       <div class="logo">TUTOR U</div><div class="hat"></div>
 
-      
+
       <%= render 'nav' %>
 
       <div class="menu">MENU</div>
@@ -36,7 +35,8 @@
 		      <%= text_field_tag :search, params[:search] %>
 		      <%= submit_tag "Search", id:"search-form-submit"%>
 		    <% end %>
-		    </div>
+          <%= button_tag "Need help urgently?", class: "online-tutors", id: "search-form-submit" %>
+        </div>
     <!--    <p class="logo">Tutor U</p>
         <ul class="nav-menu">
           <li>About</li>

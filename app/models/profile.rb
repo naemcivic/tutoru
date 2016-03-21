@@ -4,6 +4,7 @@ class Profile < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
+
   #a method to format availability in tutor's profile
   def tutor_availability
     self.availability.strftime('%A %b %d, %Y %I:%M %P')

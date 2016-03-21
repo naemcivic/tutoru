@@ -3,11 +3,20 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
+    if params[:search] && params[:latitude] && params[:longitude]
     @users = Profile.where('LOWER(category) LIKE LOWER(?)', "%#{params[:search]}%").near([params[:latitude],params[:longitude]], 25, unit: :km)
       respond_to do |format|
-        format.html
-        format.js
+        format.html {}
+        format.js {}
       end
+      else
+    @users = Profile.where("videoconfavailability <= ? AND videoconfavailability >= ?", Time.now + 1.hour , Time.now - 1.hour )
+      respond_to do |format|
+        format.html {}
+        format.js {}
+      end
+    end
+
   end
 
 
