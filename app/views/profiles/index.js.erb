@@ -1,1 +1,5 @@
-$("#tutorlist").html("<%= j render @profiles  %>");
+<% if @profiles.present? %>
+  $("#tutorlist").html("<%= j render @profiles  %>");
+<% else %>
+  $("#tutorlist").html("<%= j render(:partial => 'notavailableforvideoconf')%>");
+<% end %>
