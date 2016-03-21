@@ -1,10 +1,27 @@
+<<<<<<< HEAD
   <!-- #######this will show the Tutor's profile for student ONLY -->
+=======
+<div class="show-container">
+  <div class="bc-show-intro-container"></div>
+  <!-- this will show the Tutor's profile for student ONLY -->
+>>>>>>> front
 <% if @user.student? && current_user.student? == false%>
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['google_maps_api_key']}&callback=initMap", async: true, defer: true %>
-    <h1><%= "#{@user.name}'s Profile" %></h1>
-    <div class="tutors-photo">
-      <%= image_tag @user.profile.avatar.url(:thumb) if @user.profile.avatar? %>
+  <div id="map">
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['google_maps_api_key']}&callback=initMap", async: true, defer: true, id: 'map' %>
+  </div>
+    <div class="tutor-header">
+      <div class="profile-contain">
+        <div class="tutors-photo">
+          <%= image_tag @user.profile.avatar.url if @user.profile.avatar? %>
+        </div>
+        <div class='right-profile'>
+          <h1 class="h1"><%= "#{@user.name}" %></h1>
+          <h4 class='h4'><%= @user.email %></h4>
+          <h4 class='h4'><%= @user.profile.location %> </h4>
+        </div>
+      </div>
     </div>
+
       <ul>
         <li>Tutor's name: <%= @user.name %></li>
         <li>Tutor's email: <%= @user.email %></li>
@@ -16,40 +33,28 @@
         <% if @user.profile.videoconfavailability != nil %>
         <li>Video Conference availability: <%= @user.profile.video_availability %></li>
         <% end %>
-      </ul>
+      </ul> 
 
-    <!-- #####This is a map div. It displays the location of the tutor -->
-    <div id="show-map" data-latitude="<%= @user.profile.latitude %>" data-longitude="<%= @user.profile.longitude %>">
-    </div>
 
-    <!-- #Appointment form for students to book a tutor for appointment -->
-    <h4 id="after-appointment">Make an appointment</h4>
-      <h2 id="appointment-made"></h2>
-      <%= form_for [@user, @appointment], :remote => true do |f| %>
-        <div id="appointment_errors">
-            <%= render :partial => "/users/appointment_form_errors" %>
-        </div>
-        <div class="field">
-          <%= f.label :appointment_date %><br />
-          <%= f.datetime_local_field :appointment_date %>
-        </div>
-        <div class="field">
-           <%= f.hidden_field :tutor_id, :value => params[:id] %>
-        </div>
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-      <% end %>
+<div class="main-tutor-container">
+  <div class="overlay1">
+  <div class="main-contain">
 
-    <!-- ##### Tutor UpVote DownVote system for the students -->
-    <div id="upvote">
-      <%= link_to like_user_path(@user), class: "like", method: :put do %>
-        <button type="button" id="like">
-          Upvote
-        </button>
-        <%= pluralize(@user.get_upvotes.size,"upvote") %>
-      <% end %>
-    </div>
+        <h3 class="headline-top">Tutoring Since</h3>
+        <p class='e-q'><%= "#{@user.name}" %> has been a trusted tutor since <%= @user.member_since %>.</p>
+        <h3 class="headline1">Expertise and Qualifications</h3>
+        <ul class="e-q-list">
+          <li class="e-q"><%= @user.profile.category %></li>
+          <li class='e-q'><%= @user.profile.qualification %></li>
+        </ul>
+        <h3 class='headline2'><%= @user.profile.location %></h3>
+
+        <div id="show-map" data-latitude="<%= @user.profile.latitude %>" data-longitude="<%= @user.profile.longitude %>">
+        </div>
+
+        <h3 class="headline3">Availability: <%= @user.profile.tutor_availability %></h3>
+
+
 
     <div id="downvote">
       <%= link_to unlike_user_path(@user) , class: "like", method: :put do %>
@@ -65,51 +70,97 @@
 
   <!-- #helper method for google hangout -->
 <% elsif %>
+      <!-- #####This is a map div. It displays the location of the tutor -->
 
-  <!-- ##### Display Tutor's OWN profile -->
-  <div class="user-profile">
-    <% if current_user.student? && current_user.id == @user.id %>
-    <h1>My Profile</h1>
+      <!-- #Appointment form for students to book a tutor for appointment -->
+      <h4 class="headline2">Make an appointment</h4>
+        <h2 id="appointment-made"></h2>
+        <%= form_for [@user, @appointment], :remote => true do |f| %>
+          <div id="appointment_errors">
+              <%= render :partial => "/users/appointment_form_errors" %>
+          </div>
+          <div class="field">
+         <!--    <%= f.label :appointment_date %><br /> -->
+            <%= f.datetime_local_field :appointment_date %>
+          </div>
+          <div class="field">
+             <%= f.hidden_field :tutor_id, :value => params[:id] %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+
+      <!-- ##### Tutor UpVote DownVote system for the students -->
+      <div id="upvote">
+        <%= link_to like_user_path(@user), class: "like", method: :put do %>
+          <button type="button" id="like">
+            Upvote
+          </button>
+          <%= pluralize(@user.get_upvotes.size,"upvote") %>
+        <% end %>
+      </div>
+
+      <div id="downvote">
+        <%= link_to unlike_user_path(@user) , class: "like", method: :put do %>
+          <button type="button" id="downvote-button">
+            Downvote
+          </button>
+          <%= pluralize(@user.get_downvotes.size,"downvote") %>
+        <% end %>
+      </div>
+      <%= instant_hangout widget_size: 200 %>
+
+  <% elsif %>
+
+    <!-- ##### Display Tutor's OWN profile -->
+    <div class="user-profile">
+      <% if current_user.student? && current_user.id == @user.id %>
+      <h1>My Profile</h1>
+        <ul>
+          <li>Name: <%=@user.name%></li>
+          <li>Email: <%=@user.email %></li>
+          <li>My availability: <%=@user.profile.tutor_availability%></li>
+          <li><%= link_to 'edit availability', edit_user_profile_path(@user.profile.user_id, @user.profile.id) %></li></br>
+          <h2>You have <%= pluralize(@user.tutor_appointments.count, 'appointment') %></h2>
+          <% @user.tutor_appointments.each do |tutor_appointment| %>
+          <li>Student Name: <%= (User.find(tutor_appointment.student_id).name) %></li>
+          <li>Appointment Date: <%= tutor_appointment.appointment_date%></li></br>
+        <% end %>
+        </ul>
+    <% else %>
+
+    <!-- #### Display Tutor's info to other Tutor's on the site -->
+    <% if current_user.student? && current_user.id != @user.id %>
+    <h1><%= "Tutor #{@user.name}'s Profile"%></h1>
+      <%= image_tag @user.profile.avatar.url(:thumb) if @user.profile.avatar? %>
       <ul>
-        <li>Name: <%=@user.name%></li>
         <li>Email: <%=@user.email %></li>
-        <li>My availability: <%=@user.profile.tutor_availability%></li>
-        <li><%= link_to 'edit availability', edit_user_profile_path(@user.profile.user_id, @user.profile.id) %></li></br>
-        <h2>You have <%= pluralize(@user.tutor_appointments.count, 'appointment') %></h2>
-        <% @user.tutor_appointments.each do |tutor_appointment| %>
-        <li>Student Name: <%= (User.find(tutor_appointment.student_id).name) %></li>
-        <li>Appointment Date: <%= tutor_appointment.appointment_date%></li></br>
+        <li>Area of expertise: <%= @user.profile.category %></li>
+      </ul>
       <% end %>
-      </ul>
-  <% else %>
 
-  <!-- #### Display Tutor's info to other Tutor's on the site -->
-  <% if current_user.student? && current_user.id != @user.id %>
-  <h1><%= "Tutor #{@user.name}'s Profile"%></h1>
-    <%= image_tag @user.profile.avatar.url(:thumb) if @user.profile.avatar? %>
-    <ul>
-      <li>Email: <%=@user.email %></li>
-      <li>Area of expertise: <%= @user.profile.category %></li>
-    </ul>
-    <% end %>
+  <% end %>
+    <!-- ###### Display Student's appointment in their profile section -->
+  <% if current_user.student? == false && params[:id] == current_user.id.to_s%>
 
-<% end %>
-  <!-- ###### Display Student's appointment in their profile section -->
-<% if current_user.student? == false && params[:id] == current_user.id.to_s%>
-
-  <h2> <%= @user.name %> You have <%= pluralize(@user.student_appointments.count, 'appointment') %></h2>
-    <% @user.student_appointments.each do |student_appointment| %>
-      <% if student_appointment.valid? %>
-        <%= image_tag User.find(student_appointment.tutor_id).profile.avatar.url(:thumb) %>
-      <ul>
-        <li>Tutor name: <%= (User.find(student_appointment.tutor_id).name) %></li>
-        <li>Appointment Date: <%= student_appointment.date_of_appointment%></li>
-        <li>Subject: <%= User.find(student_appointment.tutor_id).profile.category%></li></br>
-      </ul>
+    <h2> <%= @user.name %> You have <%= pluralize(@user.student_appointments.count, 'appointment') %></h2>
+      <% @user.student_appointments.each do |student_appointment| %>
+        <% if student_appointment.valid? %>
+          <%= image_tag User.find(student_appointment.tutor_id).profile.avatar.url(:thumb) %>
+        <ul>
+          <li>Tutor name: <%= (User.find(student_appointment.tutor_id).name) %></li>
+          <li>Appointment Date: <%= student_appointment.date_of_appointment%></li>
+          <li>Subject: <%= User.find(student_appointment.tutor_id).profile.category%></li></br>
+        </ul>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
+  </div>
+
+<% end %>
 </div>
-
-<% end %>
+</div>
+</div>
+</div>
