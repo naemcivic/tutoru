@@ -75,15 +75,10 @@ body {
 .main-tutor-container {
 	width: 60%;
 	margin: 0 auto;
-/*	padding-top: 40px;*/
 	background-color: #F5F5F5;
-/*	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 20px;*/
 	background: url(125H.jpg) no-repeat center center;
 	background-size: 100% 100%;
 	margin-top: -26px;
-
 }
 
 .right-profile {
@@ -91,7 +86,6 @@ body {
 	transform: translate(0, 35px);
 	float: left;
 	margin-left: 30px;
-
 }
 
 .e-q {
@@ -109,7 +103,6 @@ body {
 
 .h1 {
 	color: black;
-/*	display: inline-block;*/
 	position: relative;
 	font-family: 'Nunito';
 	font-weight: 400;
@@ -140,14 +133,8 @@ body {
 
 .bc-show-intro-container {
 	background-color: #f1f1f1;
-/*	background-color: white;*/
 	width: 100%;
 	height: 70px;
-/*	position: absolute;
-	top: 0;
-	left: 0;*/
-/*	border-left: 1px solid black;
-	border-right: 1px solid black;*/
 }
 
 .tutor-headline {
@@ -215,7 +202,6 @@ body {
 	margin-bottom: 10px;
 	margin-top: 25px;
 	text-transform: uppercase;
-/*	letter-spacing: 6px;*/
 }
 
 .enroll-form {
@@ -226,7 +212,6 @@ body {
 	margin-bottom: 24px;
 	text-align: center;
 	transform: translate(-10%, 0%);
-/*	margin-top: 30px;*/
 }
 
 .signup-form-container {
@@ -242,9 +227,6 @@ body {
 	width: 50%;
 	margin: 0 auto;
 	padding-top: 30px;
-/*	position: absolute;*/
-/*	top: 50%;
-	left: 50%;*/
 	transform: translate(10%, 0%);
 }
 
@@ -265,8 +247,6 @@ body {
 #tutorlist {
 	margin: 0 auto;
 	width: 60%;
-/*	margin-right: 100px;*/
-	/*padding-top: 80px;*/
 	padding-top: 60px;
 }
 
@@ -297,10 +277,6 @@ body {
 	display: inline;
 }
 
-.tutorbook {
-/*	background-color: black;
-	color: white !important;*/
-}
 
 .votestyle {
 	font-size: 12px;
@@ -328,7 +304,6 @@ body {
 	font-size: 11px;
 	font-family: 'Montserrat';
 	text-transform: uppercase;
-/*	margin-left: 15px;*/
 	margin-right: 10px;
 }
 
@@ -502,11 +477,9 @@ input[name="commit"]:hover {
 	top: 50%;
 	width: 60%;
 	transform: translate(-50%, -50%);
-/*	background-color: rgba(5, 58, 154, 0.2);*/
 	padding: 45px 45px;
 	border-radius: 24px;
 	box-shadow: 2px solid white;
-
 }
 
 .bg-wrap {
@@ -710,7 +683,6 @@ color: #222222;
 	margin: 0 auto;
 	margin-top: 100px;
 	color: #504F4F;
-/*		background-color: black;*/
 }
 
 .second-section {
@@ -721,7 +693,6 @@ color: #222222;
 	color: #504F4F;
 	overflow: hidden;
 	padding-right: 60px;
-/*		background-color: black;*/
 }
 
 .third-section {
@@ -732,7 +703,6 @@ color: #222222;
 	color: #504F4F;
 	padding-right: 55px;
 	overflow: hidden;
-/*		background-color: black;*/
 }
 
 .fourth-section {
@@ -743,7 +713,6 @@ color: #222222;
 	color: #504F4F;
 	padding-left: 250px;
 	margin-bottom: 160px;
-/*		background-color: black;*/
 }
 
 .imghousing-one {
@@ -751,7 +720,6 @@ color: #222222;
 	width: 40%;
 	float: right;
 	margin-left: 70px;
-/*	transform: translate(-200px, 0);*/
 }
 
 .imghousing-two {
@@ -820,7 +788,6 @@ img {
 	font-size: 14px;
 	font-family: 'Nunito';
 	font-weight: 300;
-/*	border: 1px solid white;*/
 }
 
 .table2 {
@@ -833,7 +800,6 @@ img {
 	font-family: 'Nunito';
 	font-weight: 300;
 	transform: translate(0,-12px);
-/*	border: 1px solid white;*/
 }
 
 .table3 {
@@ -845,8 +811,6 @@ img {
 	line-height: 20px;
 	letter-spacing: 1px;
 	transform: translate(0, -40px);
-/*	border: 1px solid white;*/
-
 }
 
 .footer-width {
@@ -878,7 +842,6 @@ img {
 .footer-signup {
 	height: 15vh;
 	text-align: center;
-/*	position: relative;*/
 background-color: white;
 }
 
@@ -968,165 +931,9 @@ font-size: 14px;
 	cursor: pointer;
 }
 
-/*@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-}*/
-
 
 /* MEDIA SCREENS */
 
-
-
-
-
-
-
-/*@media only screen and (max-width: 440px) {
-   .logo-bottom {
-      left: 38%;
-   }
-
-}
-
-
-
-
-@media only screen and (max-width: 567px) {
-   .table3 {
-      font-size: 10px;
-      transform: translate(0, -18px);
-      display: block;
-      margin: 0 auto;
-   }
-
-   .table2 {
-      display: block;
-      width: 40%;
-      margin: 0 auto;
-      margin-top: 17px;
-   }
-
-   .table1 {
-      margin: 0 auto;
-      display: block;
-      width: 40%;
-   }
-
-   .menu {
-      display: none;
-   }
-
-}
-
-@media only screen and (max-width: 631px) {
-      .action-statement {
-      margin-left: -85px;
-   }
-
-   .imghousing-two {
-      width: 50%;
-      height: 400px;
-   }
-
-   .imghousing-three {
-      margin-left: 30px;
-   }
-
-   .txthousing-two {
-      transform: translate(0, 6px);
-   }
-
-   .imghousing-four {
-      height: 240px;
-      margin-right: 55px;
-      transform: translate(0, 100px);
-   }
-
-   .fourth-section {
-      padding-left: 0px;
-      width: 77%;
-   }
-
-   .third-section {
-      width: 80%;
-      padding-right: 0px;
-   }
-
-   .second-section {
-      padding-right: 0;
-      width: 84%;
-   }
-
-   .first-section {
-      width: 85%;
-   }
-
-
-@media only screen and (max-width: 810px) {
-   .table3 {
-      font-size: 10px;
-      transform: translate(0, -18px);
-   }
-
-   .imghousing-three {
-      margin-left: 30px;
-   }
-
-   #hamburger-closer {
-      right: 10%;
-   }
-
-   .menu {
-      right: 11%;
-   }
-
-   .modal-content, .modal-content1 {
-      margin: 20% auto;
-      width: 70%;
-   }
-
-}
-
-@media only screen and (max-width: 900px) {
-      .action-statement {
-      margin-left: -119px;
-   }
-
-   .h {
-      font-size: 20px;
-   }
-
-   .layout {
-      font-size: 11px;
-   }
-
-   .txthousing-one {
-      transform: translate(0,0);
-   }
-
-   .imghousing-two {
-      margin-right: 40px;
-   }
-
-}*/
-
-/*
-@media only screen and (max-width: 1100px) {
-      .action-statement {
-      margin-left: -132px;
-   }
-
-   .layout {
-      font-size: 13px;
-   }
-
-}*/
 
 @media only screen and (min-width: 320px) {
 	  .tutor-header {
@@ -1282,14 +1089,12 @@ font-size: 14px;
 
 	.dynamic-profile {
 		margin-left: 0px;
-/*		transform: translate(-73px,14px);*/
 		position: absolute;
 		top: 15%;
 		left: 32%;
 	}
 
 	.dynamic-logout {
-/*		transform: translate(-73px,14px);*/
 		position: absolute;
 		top: 15%;
 		left: 44%;
@@ -1447,8 +1252,6 @@ font-size: 14px;
 		margin: 0 auto;
 		height: 100%;
 		width: 100%;
-
-
 	}
 
 	.tutor-header {
@@ -1519,8 +1322,6 @@ font-size: 14px;
 		margin: 0 auto;
 		height: 100%;
 		width: 100%;
-
-
 	}
 
 	.tutor-header {
@@ -1664,8 +1465,6 @@ font-size: 14px;
 		margin: 0 auto;
 		height: 100%;
 		width: 100%;
-
-
 	}
 
 	.tutor-header {
