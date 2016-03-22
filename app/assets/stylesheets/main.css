@@ -992,7 +992,7 @@ font-size: 14px;
 
 
 
-   
+
 /*@media only screen and (max-width: 440px) {
    .logo-bottom {
       left: 38%;
@@ -1163,7 +1163,6 @@ font-size: 14px;
 		font-size: 10px;
 	}
 
-   }
 
 @media only screen and (min-width: 320px) {
 
@@ -1741,7 +1740,7 @@ font-size: 14px;
 	}
 
 	.action-statement {
-		margin-left: -136px; 
+		margin-left: -136px;
 	}
 
 	.logo-bottom {
@@ -1841,7 +1840,7 @@ font-size: 14px;
 	.txthousing-two {
       transform: translate(0,26px);
    }
-	
+
 
 	.footer-width {
 		width: 86%;
@@ -2193,4 +2192,3 @@ font-size: 14px;
 
 
    }
-
