@@ -8,7 +8,7 @@
         <li class="tutorli">Tutor's availability: <%= tutor.availability %></li>
         <li class="tutorli">Area of expertise: <%= tutor.category %></li>
         <li class="tutorli">Tutor's Location: <%= tutor.location %></li>
-        <li class="tutorli">Distance to tutor's location <%= tutor.convert_km %>kms</li>
+        <li class="tutorli">Distance: <%= tutor.convert_km %>kms</li>
         <ul class="votestyle">
         <li><%= pluralize(tutor.display_upvote,"upvote") %></li>
         <li><%= pluralize(tutor.display_downvote,"downvote") %></li></br>

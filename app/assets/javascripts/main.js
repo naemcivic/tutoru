@@ -19,7 +19,7 @@ jQuery(document).on("ready page:load",function() {
 //     .setTween(introTL)
 //     .addTo(controller);
 
-
+ $(".bcg").addClass('is-loaded');
 
     // Darken intro bcg
 
@@ -96,6 +96,7 @@ hamburger.click(function (){
 
 // 'X' click on or off
 // var turn = 0;
+
 
 // hamburger.on('click', function(){
 //     if ( turn % 2 === 0) {

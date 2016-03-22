@@ -266,11 +266,8 @@ body {
 	margin: 0 auto;
 	width: 60%;
 /*	margin-right: 100px;*/
-<<<<<<< HEAD
 	/*padding-top: 80px;*/
-=======
 	padding-top: 60px;
->>>>>>> front
 }
 
 .grey {
@@ -286,7 +283,7 @@ body {
 
 .thumbnail-holder {
 	float: left;
-	width: 130px;
+	width: 140px;
 	height: 130px;
 	margin-right: 22px;
 }
@@ -452,12 +449,12 @@ input[name="commit"]:hover {
 	background-color: #2395E8;
 }
 
-#search-form-submit:active, .login:active, input[value="Create User"]:active {
+/*#search-form-submit:active, .login:active, input[value="Create User"]:active {
 	-webkit-transform: scale 0.3s ease-out;
 	-moz-transform: scale 0.3s ease-out;
 	-o-transform: scale 0.3s ease-out;
 	transform: scale 0.3s ease-out;
-	transform: scale(0.95);
+	transform: scale(0.75);*/
 }
 
 #search-form-submit:focus {
@@ -471,6 +468,7 @@ input[name="commit"]:hover {
 	margin-bottom: 30px;
 	text-transform: uppercase;
 	text-align: center;
+	transform: translateX(50%;);
 
 }
 
@@ -539,7 +537,7 @@ input[name="commit"]:hover {
 	        transform-origin: top center;
 }
 
-.is-loaded {
+.bcg.is-loaded {
 	-webkit-transform: scale(1.05);
 	    -ms-transform: scale(1.05);
 	        transform: scale(1.05);
@@ -563,6 +561,7 @@ input[name="commit"]:hover {
 	width: 100%;
 	background-size: 100% 100%;
 	padding-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .hat {
@@ -1138,18 +1137,31 @@ font-size: 14px;
 }*/
 
 @media only screen and (min-width: 320px) {
-      .tutor-header {
-         width: 100%;
+	  .tutor-header {
+	     width: 100%;
 
-      }
+	  }
 
-      .main-tutor-container {
-         width: 100%;
-      }
+	  .main-tutor-container {
+	     width: 100%;
+	  }
 
-      .profile-contain {
-         width: 100%;
-      }
+	  .profile-contain {
+	     width: 100%;
+	  }
+
+    #tutorlist {
+		width: 100%;
+	}
+
+	.thumbnail-holder {
+		width: 140px;
+		height: 130px;
+	}
+
+	.tutorli {
+		font-size: 10px;
+	}
 
    }
 
@@ -1259,20 +1271,6 @@ font-size: 14px;
       font-size: 11px;
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	.logo {
 		font-size: 13px;
 	}
@@ -1340,15 +1338,6 @@ font-size: 14px;
 	}
 
 
-
-
-
-
-
-
-
-
-
 	.tutors-photo {
 		height: 150px;
 		width: 150px;
@@ -1371,8 +1360,6 @@ font-size: 14px;
 		margin: 0 auto;
 		height: 100%;
 		width: 100%;
-
-
 	}
 
 	.tutor-header {
@@ -1421,6 +1408,32 @@ font-size: 14px;
 }
 
 @media only screen and (min-width: 360px) {
+
+	.dynamic-profile {
+		left: 29%;
+	}
+
+	.dynamic-logout {
+		left: 41%;
+	}
+
+	.search {
+		width: 87%;
+	}
+
+	.imghousing-four {
+		margin-right: 33px;
+	}
+
+	.footer-width {
+		background-color: black;
+		width: 100%;
+	}
+
+	.table3 {
+		color: white;
+	}
+
 	.tutors-photo {
 		height: 150px;
 		width: 150px;
@@ -1564,7 +1577,80 @@ font-size: 14px;
 	}
 }
 
+@media only screen and (min-width: 375px) {
+
+	.dynamic-profile {
+		left: 28%;
+	}
+
+	.dynamic-logout {
+		left: 38%;
+	}
+
+	.search {
+		width: 83%;
+	}
+
+	.logo-bottom {
+		left: 32%;
+	}
+
+	.footer-width {
+		padding-top: 20px;
+	}
+
+	.action-statement, .signup-button {
+		font-size: 14px;
+	}
+
+	.action-statement {
+		margin-left: -123px;
+	}
+
+	.first-section {
+		margin-top: 50px;
+		height: 30vh;
+	}
+
+	.second-section {
+		height: 30vh;
+	}
+
+	.third-section {
+		height: 30vh;
+	}
+
+	.fourth-section {
+		height: 13vh;
+	}
+
+}
+
+
+
 @media only screen and (min-width: 411px) {
+
+	.tutorli {
+		font-size: 12px;
+	}
+
+	.dynamic-profile {
+		left: 26%;
+	}
+
+	.dynamic-logout {
+		left: 36%;
+	}
+
+	.search {
+		width: 76%;
+	}
+
+	.logo-bottom {
+		left: 34%;
+	}
+
+
 	.tutors-photo {
 		height: 150px;
 		width: 150px;
@@ -1637,6 +1723,44 @@ font-size: 14px;
 }
 
 @media only screen and (min-width: 434px) {
+
+	.dynamic-profile {
+		left: 25%;
+	}
+
+	.dynamic-logout {
+		left: 34%;
+	}
+
+	.search {
+		width: 72%;
+	}
+
+	.action-statement, .signup-button {
+		font-size: 16px;
+	}
+
+	.action-statement {
+		margin-left: -136px; 
+	}
+
+	.logo-bottom {
+		left: 36%;
+	}
+
+	.first-section {
+		height: 25vh;
+	}
+
+	.second-section {
+		height: 25vh;
+	}
+
+	.third-section {
+		height: 26vh;
+	}
+
+
 	.tutors-photo {
 		height: 150px;
 		width: 150px;
@@ -1709,6 +1833,127 @@ font-size: 14px;
 
 
 @media only screen and (min-width: 767px) {
+
+	.tutorli {
+	font-size: 16px;
+	}
+
+	.txthousing-two {
+      transform: translate(0,26px);
+   }
+	
+
+	.footer-width {
+		width: 86%;
+	}
+
+	.table1 {
+		display: inline-block;
+		width: 25%;
+	}
+
+	.table2 {
+		display: inline-block;
+		width: 30%;
+	}
+
+	.table3 {
+		width: 40%;
+		display: inline-block;
+	}
+
+	.footer {
+		height: 22vh;
+	}
+
+	.dynamic-profile, .dynamic-logout, .dynamic-login {
+		font-size: 10px;
+	}
+
+	.dynamic-login {
+		margin-top: 0px;
+	}
+
+	.dynamic-profile {
+		margin-left: 15px;
+		position: initial;
+
+	}
+
+	.dynamic-logout {
+		position: initial;
+	}
+
+	#hamburger-closer {
+		top: 24%;
+		right: 8%;
+	}
+
+	.search {
+		width: 62%;
+	}
+
+	input[name="search"] {
+		width: 355px;
+		height: 26px;
+	}
+
+	#search-form-submit {
+		transform: translateX(-21px) translateY(-1px) scale(0.8);
+	}
+
+	.video {
+		left: 37%;
+	}
+
+	.blackcontent {
+		background-size: 180px;
+	}
+
+	.bcg {
+		height: 67vh;
+	}
+
+	.h {
+		font-size: 21px;
+	}
+
+	.layout {
+		font-size: 13px;
+	}
+
+	.first-section {
+		height: 20vh;
+	}
+
+	.second-section {
+		height: 21vh;
+	}
+
+	.third-section {
+		height: 20vh;
+	}
+
+	.footer-start {
+		height: 12vh;
+	}
+
+	.logo-bottom {
+		left: 41%;
+	}
+
+	.action-statement, .signup-button {
+		font-size: 14px;
+	}
+
+	.footer-signup {
+		height: 10vh;
+	}
+
+	.action-statement {
+		margin-left: -127px;
+	}
+
 	.tutors-photo {
 	height: 200px;
 	width: 200px;
@@ -1792,6 +2037,20 @@ font-size: 14px;
 
 
 @media only screen and (min-width: 780px) {
+
+	.tutorli {
+		font-size: 14px;
+	}
+
+	#tutorlist {
+		width: 60%;
+	}
+
+	.thumbnail-holder {
+		width: 140px;
+		height: 130px;
+	}
+
       .tutor-header {
          width: 60%;
 
@@ -1805,6 +2064,133 @@ font-size: 14px;
          width: 66%;
       }
 
+      #search-form {
+      	width: 727px;
+      	height: 100%;
+      	margin: 0 auto;
+      }
+
+      input[name="search"] {
+      	margin-left: 0px;
+      	width: 630px;
+      }
+
+      .search {
+      	width: 43%;
+      }
+
+      .blackcontent {
+      	height: 32vh;
+      	background-size: 229px;
+      }
+
+      .dynamic-profile, .dynamic-logout, .dynamic-login {
+      	font-size: 12px;
+      }
+
+      .dynamic-login {
+      	margin-left: 5px;
+      }
+
+      .logo {
+      	font-size: 32px;
+      }
+
+      .hat {
+      	transform: scale(0.6);
+      }
+
+      #hamburger-closer {
+      	right: 5%;
+      }
+
+      .menu {
+      	display: inherit;
+      }
+
+      .bcg {
+      	height: 78vh;
+      }
+
+      .first-section {
+      	width: 53%;
+      	height: 30vh;
+      }
+
+      .second-section {
+      	width: 58%;
+      	height: 28vh;
+      	padding-right: 0px;
+      }
+
+      .third-section {
+      	width: 58%;
+      	height: 30vh;
+      }
+
+      .fourth-section {
+      	width: 56%;
+      }
+
+      .footer {
+      	height: 100%;
+      }
+
+      .footer-width {
+      	padding-bottom: 100px;
+      	padding-top: 50px;
+      	width: 60%;
+      }
+
+      .logo-bottom {
+      	position: static;
+      	margin: 0 auto;
+      	padding-top: 25px;
+      }
+
+      .footer-signup {
+      	height: 12vh;
+      }
+
+      .imghousing-one {
+      	height: 192px;
+      	margin-left: 90px;
+      }
+
+      .imghousing-two {
+      	margin-right: 50px;
+      }
+
+      .imghousing-four {
+      	width: 40%;
+      }
+
+      .imghousing-three {
+      	margin-left: 80px;
+      	width: 41%;
+      }
+
+      .txthousing-three {
+      	padding-left: 20px;
+      }
+
    }
 
+
+   @media only screen and (min-width: 800px) {
+
+   	.search {
+   		position: relative;
+   	}
+
+   	#search-form {
+   		position: absolute;
+   		transform: translate(-50%, -50%);
+   		top: 50%;
+   		left: 50%;
+   	}
+
+
+
+   }
 
