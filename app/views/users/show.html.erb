@@ -31,7 +31,11 @@
         <h3 class='headline2'><%= @user.profile.location %></h3>
         <div id="show-map" data-latitude="<%= @user.profile.latitude %>" data-longitude="<%= @user.profile.longitude %>">
         </div>
+        <% if @user.profile.availability == nil %>
+        <h3 class="headline3">Tutor is currently not available for booking</h3>
+          <% else %>
         <h3 class="headline3">Availability: <%= @user.profile.tutor_availability %></h3>
+        <% end %>
         <h4 class="headline2">Make an appointment</h4>
           <h2 id="appointment-made"></h2>
           <%= form_for [@user, @appointment], :remote => true do |f| %>

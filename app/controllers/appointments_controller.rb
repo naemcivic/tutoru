@@ -8,6 +8,8 @@ class AppointmentsController < ApplicationController
     @tutor = User.find(tutorid)
     respond_to do |format|
       if @appointment.available?(@tutor)
+          @tutor.profile.update_availability(@appointment.appointment_date, @tutor.profile.availability)
+          @tutor.save
           @appointment.save
           UserMailer.student_appointment(@user,@appointment,@tutor).deliver_now
           UserMailer.tutor_appointment(@user,@appointment,@tutor).deliver_now
