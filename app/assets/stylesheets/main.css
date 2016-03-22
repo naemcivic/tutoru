@@ -449,13 +449,7 @@ input[name="commit"]:hover {
 	background-color: #2395E8;
 }
 
-/*#search-form-submit:active, .login:active, input[value="Create User"]:active {
-	-webkit-transform: scale 0.3s ease-out;
-	-moz-transform: scale 0.3s ease-out;
-	-o-transform: scale 0.3s ease-out;
-	transform: scale 0.3s ease-out;
-	transform: scale(0.75);*/
-}
+
 
 #search-form-submit:focus {
 	outline: 0;
