@@ -5,10 +5,12 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = @user.student_appointments.build(appointment_params)
     tutorid = @appointment.tutor_id
-    tutor = User.find(tutorid)
+    @tutor = User.find(tutorid)
     respond_to do |format|
-      if @appointment.available?(tutor)
+      if @appointment.available?(@tutor)
           @appointment.save
+          UserMailer.student_appointment(@user,@appointment,@tutor).deliver_now
+          UserMailer.tutor_appointment(@user,@appointment,@tutor).deliver_now
         format.html {redirect_to users_path, notice: 'Appointment made'}
         format.js {}
       else
