@@ -30,10 +30,10 @@
 
     <div class="bg-wrap">
       <div class="bcg">
-    	    <div class= "search">
-		     <h2 class="h2search">Search by subject</h2>
+          <div class= "search">
+		     <h2 class="h2search"></h2>
 		    <%= form_tag users_path, method: :get, authentication: false, id: "search-form" do %>
-		      <%= text_field_tag :search, params[:search] %>
+		      <%= text_field_tag :search,  params[:search]  %>
 		      <%= submit_tag "Search", id:"search-form-submit"%></br>
         <%= link_to "Need help urgently?", user_profiles_url("1"), id:"search-form-submit", class: 'video', :remote => true  %>
         <% end %>
@@ -137,18 +137,18 @@
   <!-- SIDE NAV -->
   <nav id="side-nav">
     <div class="clear-menu"></div>
-    <a href="#0"><div class="headings-list-start"><p class="item-list">HOME</p></div></a>
-    <a href="#0"><div class="headings-list-start"><p class="item-list">TUTOR</p></div></a>
-    <a href="#0"><div class="headings-list-start"><p class="item-list">ENROLL</p></div></a>
-    <a href="#0"><div class="headings-list-start"><p class="item-list">COURSES</p></div></a>
-    <a href="#0"><div class="headings-list-start"><p class="item-list">GROUP STUDY</p></div></a>
-    <a href="#0"><div class="headings-list-start"><p class="item-list">ONLINE STUDY</p></div></a>
+    <div class="headings-list-start"><p class="item-list"><%= link_to 'HOME', users_path %></p></div>
+    <div class="headings-list-start"><p class="item-list"><%= link_to 'TUTOR', new_user_path(tutor: true) %></p></div>
+    <a href="users/new"><div class="headings-list-start"><p class="item-list">ENROLL</p></div></a>
+    <div class="headings-list-start"><p class="item-list">COURSES</p></div>
+    <div class="headings-list-start"><p class="item-list">GROUP STUDY</p></div>
+    <div class="headings-list-start"><p class="item-list">ONLINE STUDY</p></div>
 
     <!-- navigation -->
 
     <ul class="little-list">
-      <li class="item-list"><a href="#0">Login</a></li>
-      <li class="item-list"><a href="#0">Sign Out</a></li>
+      <li class="item-list"><a href="/login">Login</a></li>
+      <li class="item-list"><%= link_to "Sign Out", :logout, method: :post %></li>
       <li class="item-list"><a href="#0">Contact</a></li>
     </ul>
 
