@@ -70,22 +70,22 @@ hamburger.click(function (){
      }
 
      $('.header').toggleClass('menu-open');
-     $('#side-nav').toggleClass('menu-open')
+     $('#side-nav').toggleClass('menu-open');
 });
 
-  $('.menu').on('click', function(event) {
-    if (!$(event.target).is(hamburger)) {
-      menuTl.reverse();
-      $('#side-nav').removeClass('menu-open')
-    }
-  });
-
-  $(document).on('click', function(){
-    if (!$(event.target).is(menulines)) {
-     $('#side-nav').removeClass('menu-open');
-     menuTl.reverse();
-    }
-  });
+  // $('.menu').on('click', function(event) {
+  //   if (!$(event.target).is(hamburger)) {
+  //     menuTl.reverse();
+  //     $('#side-nav').removeClass('menu-open')
+  //   }
+  // });
+  //
+  // $(document).on('click', function(){
+  //   if (!$(event.target).is(menulines)) {
+  //    $('#side-nav').removeClass('menu-open');
+  //    menuTl.reverse();
+  //   }
+  // });
 
     // var layoutTl = new TimelineMax();
 
