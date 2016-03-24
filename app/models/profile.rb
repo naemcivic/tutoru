@@ -4,11 +4,13 @@ class Profile < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
+  def display_time_to_video_conf
+    videoconfavailability.strftime("%I:%M %p")
+  end
+
   def time_to_video
     (((self.videoconfavailability - Time.now.to_datetime) / 60) / 60).round(0)
   end
-
-
 
   def update_availability(appointmentdate, profiledate)
     if self.availability == appointmentdate

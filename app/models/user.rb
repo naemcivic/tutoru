@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
+  def self.tutor?
+    User.where(student: false)
+  end
+
   def student?
     #This method is to check for a boolean value column student on users table,
     #if false the user is a tutor.
