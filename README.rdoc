@@ -1,28 +1,13 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ TutorU is a web application about connecting students to tutors. Based on
+ availability, students can setup appointments with their choice of tutor.
+ If immediate help is needed, then video conferencing is an option; where tutor
+ will be online and offer help through this function.
+ On boarding emails will be sent out to users, as well as when an appointment is
+ setup.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+ This application is using Ruby version 2.3.0 and Rails 4.2.5.1 with a
+ postgresql database.
+ Run bundle install to install all dependencies if using bundler
+ Run rake db:migrate to ge the datbase up and running
+ 
