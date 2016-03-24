@@ -5,7 +5,8 @@
       <%= image_tag profile.avatar.url(:thumb), class: 'avatar' %>
       </span>
       <% if @suggest.present? %>
-        <h1><%="Tutor #{profile.user.name} is available to chat at a later time"%></h1></br>
+        <h1>Pleae check back at a later time</h1>
+        <h1><%="Tutor #{profile.user.name} is available to chat in #{profile.time_to_video} hours"%></h1></br>
       <% end %>
       <li class="tutorli">Tutor's name: <%= profile.user.name %></li>
       <li class="tutorli">Tutor's availability: <%= profile.availability %></li>

@@ -4,6 +4,12 @@ class Profile < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
+  def time_to_video
+    (((self.videoconfavailability - Time.now.to_datetime) / 60) / 60).round(0)
+  end
+
+
+
   def update_availability(appointmentdate, profiledate)
     if self.availability == appointmentdate
       self.availability = nil
@@ -11,11 +17,6 @@ class Profile < ActiveRecord::Base
       self.availability
     end
   end
-
-
-
-
-
 
   #a method to format availability in tutor's profile
   def tutor_availability
