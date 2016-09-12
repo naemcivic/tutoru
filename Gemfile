@@ -43,7 +43,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'sorcery'
 #geocoding location
 gem 'geocoder'
-#Env and secrets 
+#Env and secrets
 gem 'figaro'
 # Use Unicorn as the app server
 # gem 'unicorn'
